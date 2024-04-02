@@ -1,6 +1,8 @@
 import { AdvancedSearch } from "./pages/AdvancedSearch";
 import { BasicSearch } from "./pages/BasicSearch";
 import { Staticstics } from "./pages/Statistics";
+import { UploadContract } from "./pages/UploadContract";
+import { UploadLaw } from "./pages/UploadLaw";
 import { Page } from "./types/pages";
 
 interface IProps {
@@ -15,6 +17,8 @@ export const MainView: React.FunctionComponent<IProps> = ({ chosenPage }) => {
                 {chosenPage === Page.SEARCH && <BasicSearch />}
                 {chosenPage === Page.ADVANCE && <AdvancedSearch />}
                 {chosenPage === Page.STATISTICS && <Staticstics />}
+                {chosenPage === Page.UPLOAD_CONTRACT && <UploadContract />}
+                {chosenPage === Page.UPLOAD_LAW && <UploadLaw />}
             </div>
         </div>
     )

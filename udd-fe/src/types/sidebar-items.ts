@@ -15,7 +15,20 @@ export interface SidebarItem {
 }
 
 export const sidebarMenu: SidebarMenu[] =  [
-    {
+        {
+            name: "Files",
+            items: [{
+                icon: TbIcons.TbFileInvoice,
+                name: "Upload contract",
+                page: Page.UPLOAD_CONTRACT
+            },
+            {
+                icon: TbIcons.TbFile,
+                name: "Upload law",
+                page: Page.UPLOAD_LAW
+            }]
+        },
+        {
         name: "Search",
         items: [{
             icon: TbIcons.TbSearch,
@@ -31,19 +44,6 @@ export const sidebarMenu: SidebarMenu[] =  [
             icon: VscGraph,
             name: "Statistics",
             page: Page.STATISTICS
-        }]
-    },
-    {
-        name: "Files",
-        items: [{
-            icon: TbIcons.TbFileCv,
-            name: "Upload contract",
-            page: Page.UPLOAD_CONTRACT
-        },
-        {
-            icon: TbIcons.TbFile,
-            name: "Upload law",
-            page: Page.UPLOAD_LAW
         }]
     }
 ];

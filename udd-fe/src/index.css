@@ -21,7 +21,7 @@ code {
 }
 
 .primary-button {
-  @apply rounded-lg bg-primary shadow-2xl p-3 text-off-white w-40
+  @apply rounded-lg bg-primary shadow-2xl p-2 px-5 text-off-white
 }
 
 .secondary-round-button {
@@ -30,4 +30,12 @@ code {
 
 input, select {
   @apply border-b border-light-gray p-1 ps-3 outline-none bg-transparent focus:ring-0 focus:bg-transparent focus:border-primary focus:outline-none
+}
+
+a {
+  @apply text-primary font-semibold cursor-pointer underline
+}
+
+.custom-file-upload {
+  @apply border-b border-light-gray inline-block p-1 ps-3 cursor-pointer
 }

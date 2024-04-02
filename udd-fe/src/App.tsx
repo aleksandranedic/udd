@@ -4,7 +4,7 @@ import { Page } from './types/pages';
 import { MainView } from './MainView';
 
 function App() {
-  const [chosenPage, setChosenPage] = useState(Page.SEARCH);
+  const [chosenPage, setChosenPage] = useState(Page.UPLOAD_CONTRACT);
   return (
     <div className="flex h-full">
       <Sidebar setChosenPage={setChosenPage}/>
