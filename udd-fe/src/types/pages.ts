@@ -2,6 +2,8 @@ export enum Page {
     SEARCH = "Basic search",
     ADVANCE = "Advanced search",
     STATISTICS = "Statistics",
+    UPLOAD_CONTRACT = "Upload contract",
+    UPLOAD_LAW = "Upload law",
 }
 
 export enum ParameterField {
