@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import { ParameterEqualityOperand, ParameterField, ParameterObject, ParameterOperand } from "../types/pages";
 import { TbMinus, TbPlus } from "react-icons/tb";
 
@@ -16,7 +16,7 @@ export const AdvancedSearch: React.FunctionComponent = () => {
         parameter.equalityOperand = value as ParameterEqualityOperand;
         setParameters([...parameters]);
     };
-    const setIsPhase = (e: React.MouseEvent<HTMLInputElement, MouseEvent>, parameter: ParameterObject) => {
+    const setIsPhase = (e: ChangeEvent<HTMLInputElement>, parameter: ParameterObject) => {
         parameter.phrase = (e.target as HTMLInputElement).checked;
         setParameters([...parameters]);
     };
@@ -50,7 +50,7 @@ export const AdvancedSearch: React.FunctionComponent = () => {
                         {index > 0 && <div className="w-20"></div>}
                     </div>
                     <div className="w-[20%] flex justify-end gap-4 self-end">
-                        <input type="checkbox" checked={parameter.phrase} id="isPhrase" className="accent-secondary text-off-white" onClick={e => setIsPhase(e, parameter)}/>
+                        <input type="checkbox" checked={parameter.phrase} id="isPhrase" className="accent-secondary text-off-white" onChange={e => setIsPhase(e, parameter)}/>
                         <label htmlFor="isPhrase">Phrase</label>
                     </div>
                     <div className="flex gap-1 w-[10%] justify-end">
