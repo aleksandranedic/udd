@@ -1,7 +1,7 @@
 package uddbe.controller;
 
-import uddbe.dto.DummyDocumentFileDTO;
-import uddbe.dto.DummyDocumentFileResponseDTO;
+import uddbe.dto.ContractFileDTO;
+import uddbe.dto.ContractFileResponseDTO;
 import uddbe.service.interfaces.IndexingService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -18,11 +18,11 @@ public class IndexController {
 
     private final IndexingService indexingService;
 
-    @PostMapping
+    @PostMapping(value = "contract")
     @ResponseStatus(HttpStatus.CREATED)
-    public DummyDocumentFileResponseDTO addDocumentFile(
-        @ModelAttribute DummyDocumentFileDTO documentFile) {
+    public ContractFileResponseDTO addDocumentFile(
+        @ModelAttribute ContractFileDTO documentFile) {
         var serverFilename = indexingService.indexDocument(documentFile.file());
-        return new DummyDocumentFileResponseDTO(serverFilename);
+        return new ContractFileResponseDTO(serverFilename);
     }
 }

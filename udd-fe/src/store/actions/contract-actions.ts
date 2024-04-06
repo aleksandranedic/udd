@@ -1,27 +1,16 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { Contract } from "../../types/document";
 
-export const submitContract = createAsyncThunk<Contract, string>(
+export const submitContract = createAsyncThunk<Contract, File>(
   "contarct/submitContract",
-  async (file: string, { rejectWithValue }) => {
-    await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulating async operation
-    console.log(file);
-    const result = {
-      governmentName: "",
-      governmentAddress: "",
-      governmentAdministrativeLevel: "",
-      governmentEmail: "",
-      governmentPhone: "",
-      content: "",
-      agencyEmployeeName: "",
-      agencyAddress: "",
-      agencyEmail: "",
-      agencyPhone: "",
-      title: "",
-      governmentEmployeeName: "",
-      loading: false,
-    };
-    if (!result) return rejectWithValue("Failed to submit contract");
-    return result;
+  async (file: File, { rejectWithValue }) => {
+    const formData = new FormData();
+    formData.append("file", file);
+    const response = await fetch("http://localhost:3000/api/index/contract", {
+      method: "POST",
+      body: formData,
+    });
+    if (!response) return rejectWithValue("Failed to submit contract");
+    return response.json() as Promise<Contract>;
   }
 );

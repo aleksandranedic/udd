@@ -1,16 +1,17 @@
 import * as TbIcons from 'react-icons/tb'
 import { Contract } from '../types/document';
-import { useAppDispatch, useAppSelector } from '../store/types';
+import { useAppSelector } from '../store/types';
 import { useRef } from 'react';
+import { submitContract } from '../store/actions/contract-actions';
 
 export const UploadContract: React.FunctionComponent = () => {
     const submittedContract: Contract | null = useAppSelector((state) => state.contractSlice.contract);
     const fileContainerRef = useRef<HTMLInputElement>(null);
-    const dispatch = useAppDispatch();  
 
-    const saveContract = () => {
+    const saveContract = async () => {
         const file = fileContainerRef.current?.files?.item(0);
-        dispatch({type: 'contract/setContract', payload: {contract: {id: '1', name: 'contract1', content: 'contract1 content'}}});
+        if (!file) return;
+        submitContract(file);
     };
     return (
         <div className="w-full flex flex-col h-full">
