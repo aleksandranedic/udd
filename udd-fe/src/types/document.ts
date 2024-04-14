@@ -16,6 +16,23 @@ export interface Contract {
     agencySignatorySurname?: string;
 }
 
+export const ContractName = Object.freeze({
+    governmentName: "Government name",
+    governmentAddress: "Government address",
+    governmentLevel: "Government level",
+    governmentEmail: "Government email",
+    governmentPhone: "Government phone",
+    content: "Contract content",
+    agencyAddress: "Agency address",
+    agencyEmail: "Agency email",
+    agencyPhone: "Agency phone",
+    contractTitle: "Contract title",
+    clientSignatoryName: "Client name",
+    clientSignatorySurname: "Client surname",
+    agencySignatoryName: "Agency name",
+    agencySignatorySurname: "Agency surname",
+});
+
 export interface Law {
     id?: string;
     content: string;
