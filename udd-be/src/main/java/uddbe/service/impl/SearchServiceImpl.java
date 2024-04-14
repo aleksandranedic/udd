@@ -1,13 +1,11 @@
 package uddbe.service.impl;
 
-import co.elastic.clients.elasticsearch._types.FieldValue;
 import co.elastic.clients.elasticsearch._types.query_dsl.BoolQuery;
 import co.elastic.clients.elasticsearch._types.query_dsl.Query;
-import co.elastic.clients.elasticsearch._types.query_dsl.TermsQueryField;
 import uddbe.exceptionhandling.exception.MalformedQueryException;
-import uddbe.indexmodel.DummyIndex;
+import uddbe.indexmodel.ContractIndex;
 import uddbe.service.interfaces.SearchService;
-import java.util.ArrayList;
+
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.elasticsearch.common.unit.Fuzziness;
@@ -27,7 +25,7 @@ public class SearchServiceImpl implements SearchService {
     private final ElasticsearchOperations elasticsearchTemplate;
 
     @Override
-    public Page<DummyIndex> simpleSearch(List<String> keywords, Pageable pageable) {
+    public Page<ContractIndex> simpleSearch(List<String> keywords, Pageable pageable) {
         var searchQueryBuilder =
             new NativeQueryBuilder().withQuery(buildSimpleSearchQuery(keywords))
                 .withPageable(pageable);
@@ -36,7 +34,7 @@ public class SearchServiceImpl implements SearchService {
     }
 
     @Override
-    public Page<DummyIndex> advancedSearch(List<String> expression, Pageable pageable) {
+    public Page<ContractIndex> advancedSearch(List<String> expression, Pageable pageable) {
         if (expression.size() != 3) {
             throw new MalformedQueryException("Search query malformed.");
         }
@@ -134,13 +132,13 @@ public class SearchServiceImpl implements SearchService {
         })))._toQuery();
     }
 
-    private Page<DummyIndex> runQuery(NativeQuery searchQuery) {
+    private Page<ContractIndex> runQuery(NativeQuery searchQuery) {
 
-        var searchHits = elasticsearchTemplate.search(searchQuery, DummyIndex.class,
+        var searchHits = elasticsearchTemplate.search(searchQuery, ContractIndex.class,
             IndexCoordinates.of("dummy_index"));
 
         var searchHitsPaged = SearchHitSupport.searchPageFor(searchHits, searchQuery.getPageable());
 
-        return (Page<DummyIndex>) SearchHitSupport.unwrapSearchHits(searchHitsPaged);
+        return (Page<ContractIndex>) SearchHitSupport.unwrapSearchHits(searchHitsPaged);
     }
 }

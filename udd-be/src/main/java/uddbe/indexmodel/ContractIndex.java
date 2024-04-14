@@ -14,9 +14,9 @@ import org.springframework.data.elasticsearch.annotations.Setting;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Document(indexName = "dummy_index")
+@Document(indexName = "contract_index")
 @Setting(settingPath = "/configuration/serbian-analyzer-config.json")
-public class DummyIndex {
+public class ContractIndex {
 
     @Id
     private String id;

@@ -1,11 +1,12 @@
 package uddbe.service.impl;
 
+import uddbe.dto.ContractDTO;
 import uddbe.exceptionhandling.exception.LoadingException;
 import uddbe.exceptionhandling.exception.StorageException;
-import uddbe.indexmodel.DummyIndex;
-import uddbe.indexrepository.DummyIndexRepository;
-import uddbe.model.DummyTable;
-import uddbe.respository.DummyRepository;
+import uddbe.indexmodel.ContractIndex;
+import uddbe.indexrepository.ContractIndexRepository;
+import uddbe.model.ContractTable;
+import uddbe.respository.ContractRepository;
 import uddbe.service.interfaces.FileService;
 import uddbe.service.interfaces.IndexingService;
 import jakarta.transaction.Transactional;
@@ -13,6 +14,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import org.apache.pdfbox.pdmodel.PDDocument;
@@ -21,49 +23,64 @@ import org.apache.tika.Tika;
 import org.apache.tika.language.detect.LanguageDetector;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+import uddbe.service.mapper.ContractMapper;
 
 @Service
 @RequiredArgsConstructor
 public class IndexingServiceImpl implements IndexingService {
 
-    private final DummyIndexRepository dummyIndexRepository;
+    private final ContractIndexRepository contractIndexRepository;
 
-    private final DummyRepository dummyRepository;
+    private final ContractRepository contractRepository;
 
     private final FileService fileService;
 
     private final LanguageDetector languageDetector;
 
+    private final ContractMapper contractMapper;
+
+    private final PdfParser pdfParser;
 
     @Override
     @Transactional
-    public String indexDocument(MultipartFile documentFile) {
-        var newEntity = new DummyTable();
-        var newIndex = new DummyIndex();
-
+    public ContractDTO saveContract(MultipartFile documentFile) {
+        var newEntity = new ContractTable();
         var title = Objects.requireNonNull(documentFile.getOriginalFilename()).split("\\.")[0];
-        newIndex.setTitle(title);
         newEntity.setTitle(title);
-
-        var documentContent = extractDocumentContent(documentFile);
-        if (detectLanguage(documentContent).equals("SR")) {
-            newIndex.setContentSr(documentContent);
-        } else {
-            newIndex.setContentEn(documentContent);
-        }
-        newEntity.setTitle(title);
-
-        var serverFilename = fileService.store(documentFile, UUID.randomUUID().toString());
-        newIndex.setServerFilename(serverFilename);
-        newEntity.setServerFilename(serverFilename);
-
         newEntity.setMimeType(detectMimeType(documentFile));
-        var savedEntity = dummyRepository.save(newEntity);
+        var documentContent = extractDocumentContent(documentFile);
+        ContractDTO contractDTO = pdfParser.parseContract(documentContent);
+        newEntity = contractMapper.mapFromContractDTOToContractTable(contractDTO, newEntity);
+        var serverFilename = fileService.store(documentFile, UUID.randomUUID().toString());
+        newEntity.setServerFilename(serverFilename);
+        var savedContract = contractRepository.save(newEntity);
+        contractDTO.setId(savedContract.getId());
+        return contractDTO;
+    }
 
-        newIndex.setDatabaseId(savedEntity.getId());
-        dummyIndexRepository.save(newIndex);
+    @Override
+    @Transactional
+    public String indexDocument(ContractDTO contractDTO) {
+        ContractIndex newIndex = new ContractIndex();
+        Optional<ContractTable> contractTableOpt = contractRepository.findById(contractDTO.getId());
+        if(contractTableOpt.isEmpty()){
+            throw new RuntimeException("Contract with id " + contractDTO.getId() + " not found");
+        }
+        ContractTable contractTable = contractTableOpt.get();
+        contractTable = contractMapper.mapFromContractDTOToContractTable(contractDTO, contractTable);
+        contractRepository.save(contractTable);
 
-        return serverFilename;
+        newIndex = contractMapper.mapFromContractTableToContractIndex(contractTable, newIndex);
+
+        if (detectLanguage(contractTable.getContent()).equals("SR")) {
+            newIndex.setContentSr(contractTable.getContent());
+        } else {
+            newIndex.setContentEn(contractTable.getContent());
+        }
+
+        contractIndexRepository.save(newIndex);
+
+        return contractTable.getServerFilename();
     }
 
     private String extractDocumentContent(MultipartFile multipartPdfFile) {

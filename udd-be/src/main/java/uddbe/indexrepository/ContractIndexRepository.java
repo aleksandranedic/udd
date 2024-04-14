@@ -1,10 +1,10 @@
 package uddbe.indexrepository;
 
-import uddbe.indexmodel.DummyIndex;
+import uddbe.indexmodel.ContractIndex;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface DummyIndexRepository
-    extends ElasticsearchRepository<DummyIndex, String> {
+public interface ContractIndexRepository
+    extends ElasticsearchRepository<ContractIndex, String> {
 }

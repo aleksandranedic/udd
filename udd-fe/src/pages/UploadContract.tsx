@@ -1,18 +1,28 @@
 import * as TbIcons from 'react-icons/tb'
 import { Contract } from '../types/document';
-import { useAppSelector } from '../store/types';
-import { useRef } from 'react';
+import { useAppDispatch, useAppSelector } from '../store/types';
+import { useRef, useState } from 'react';
 import { submitContract } from '../store/actions/contract-actions';
 
 export const UploadContract: React.FunctionComponent = () => {
+    const [inputFileLabel, setInputFileLabel] = useState('Click to upload contract');
     const submittedContract: Contract | null = useAppSelector((state) => state.contractSlice.contract);
     const fileContainerRef = useRef<HTMLInputElement>(null);
+    const dispatch = useAppDispatch();
 
     const saveContract = async () => {
         const file = fileContainerRef.current?.files?.item(0);
         if (!file) return;
-        submitContract(file);
+        await dispatch(submitContract(file));
     };
+
+    const setLabel = () => {
+        const fileName = fileContainerRef.current?.files?.item(0)?.name;
+        if (fileName) {
+            setInputFileLabel(fileName);
+        }  
+    }
+
     return (
         <div className="w-full flex flex-col h-full">
             <div className="h-full pe-8 gap-5 flex flex-col">
@@ -22,8 +32,8 @@ export const UploadContract: React.FunctionComponent = () => {
                 <div className="flex w-full relative items-end">
                     {TbIcons.TbUpload({size:20, style:{fontWeight: 200, marginBottom:'5px'}})}
                     <label className="w-4/5 custom-file-upload me-16">
-                        <input type="file" className="w-full hidden" ref={fileContainerRef} />
-                        Click to upload contract
+                        <input type="file" className="w-full hidden" accept="application/pdf" ref={fileContainerRef} onChange={e => setLabel()} />
+                        {inputFileLabel}
                     </label>
                     <button className="primary-button" onClick={e => saveContract()}>Save contract</button>
                 </div>

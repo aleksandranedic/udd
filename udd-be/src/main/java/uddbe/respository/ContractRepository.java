@@ -1,9 +1,9 @@
 package uddbe.respository;
 
-import uddbe.model.DummyTable;
+import uddbe.model.ContractTable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface DummyRepository extends JpaRepository<DummyTable, Integer> {
+public interface ContractRepository extends JpaRepository<ContractTable, Integer> {
 }

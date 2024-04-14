@@ -24,17 +24,21 @@ export const contractSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(submitContract.pending, (state: ContractState) => {
-      state.loading = true;
+      state = { ...state, loading: true };
+      return state;
     });
     builder.addCase(
       submitContract.fulfilled,
       (state: ContractState, action) => {
         const newContract = action.payload as Contract;
-        state = { ...state, ...newContract, loading: false };
+        state = { ...state, contract: newContract, loading: false };
+        console.log(state);
+        return state;
       }
     );
     builder.addCase(submitContract.rejected, (state: ContractState) => {
-      state.loading = false;
+      state = {...state, loading: false};
+      return state;
     });
   },
 });
