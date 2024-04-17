@@ -1,14 +1,13 @@
 package uddbe.indexmodel;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.data.elasticsearch.annotations.Document;
-import org.springframework.data.elasticsearch.annotations.Field;
-import org.springframework.data.elasticsearch.annotations.FieldType;
-import org.springframework.data.elasticsearch.annotations.Setting;
+import org.elasticsearch.common.geo.GeoPoint;
+import org.springframework.data.elasticsearch.annotations.*;
 
 @Getter
 @Setter
@@ -35,4 +34,47 @@ public class ContractIndex {
 
     @Field(type = FieldType.Integer, store = true, name = "database_id")
     private Integer databaseId;
+
+    @Field(type = FieldType.Text, store = true, name = "agency_address", analyzer = "serbian_simple", searchAnalyzer = "serbian_simple")
+    private String agencyAddress;
+
+    @Field(type = FieldType.Text, store = true, name = "agency_email", analyzer = "serbian_simple", searchAnalyzer = "serbian_simple")
+    private String agencyEmail;
+
+    @Field(type = FieldType.Text, store = true, name = "agency_phone", analyzer = "serbian_simple", searchAnalyzer = "serbian_simple")
+    private String agencyPhone;
+
+    @Field(type = FieldType.Text, store = true, name = "government_name", analyzer = "serbian_simple", searchAnalyzer = "serbian_simple")
+    private String governmentName;
+
+    @Field(type = FieldType.Text, store = true, name = "government_level", analyzer = "serbian_simple", searchAnalyzer = "serbian_simple")
+    private String governmentLevel;
+
+    @Field(type = FieldType.Text, store = true, name = "government_address", analyzer = "serbian_simple", searchAnalyzer = "serbian_simple")
+    private String governmentAddress;
+
+    @Field(type = FieldType.Text, store = true, name = "government_email", analyzer = "serbian_simple", searchAnalyzer = "serbian_simple")
+    private String governmentEmail;
+
+    @Field(type = FieldType.Text, store = true, name = "government_phone", analyzer = "serbian_simple", searchAnalyzer = "serbian_simple")
+    private String governmentPhone;
+
+    @Field(type = FieldType.Text, store = true, name = "contact_title", analyzer = "serbian_simple", searchAnalyzer = "serbian_simple")
+    private String contractTitle;
+
+    @Field(type = FieldType.Text, store = true, name = "client_signatory_name", analyzer = "serbian_simple", searchAnalyzer = "serbian_simple")
+    private String clientSignatoryName;
+
+    @Field(type = FieldType.Text, store = true, name = "client_signatory_surname", analyzer = "serbian_simple", searchAnalyzer = "serbian_simple")
+    private String clientSignatorySurname;
+
+    @Field(type = FieldType.Text, store = true, name = "agency_signatory_name", analyzer = "serbian_simple", searchAnalyzer = "serbian_simple")
+    private String agencySignatoryName;
+
+    @Field(type = FieldType.Text, store = true, name = "agency_signatory_surname", analyzer = "serbian_simple", searchAnalyzer = "serbian_simple")
+    private String agencySignatorySurname;
+
+    @GeoPointField
+    @Field(store = true, name = "location")
+    private GeoPoint location;
 }

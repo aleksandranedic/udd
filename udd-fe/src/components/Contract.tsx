@@ -41,6 +41,7 @@ export const ContractComp: React.FunctionComponent<ContractCompProps> = ({editab
             <div className="flex flex-col gap-8 m-10">
             {
                 Object.keys(changedContract).map((key, index) => {
+                    if (key === 'id') return <></>;
                 return (
                     <span className="flex items-end gap-10" key={index}>
                         <label className="whitespace-nowrap w-1/4">{ContractName[key as keyof typeof ContractName]}</label>

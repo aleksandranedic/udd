@@ -1,5 +1,6 @@
 package uddbe.service.impl;
 
+import org.elasticsearch.common.geo.GeoPoint;
 import uddbe.dto.ContractDTO;
 import uddbe.exceptionhandling.exception.LoadingException;
 import uddbe.exceptionhandling.exception.StorageException;
@@ -41,6 +42,8 @@ public class IndexingServiceImpl implements IndexingService {
 
     private final PdfParser pdfParser;
 
+    private final GeoLocationService geolocationService;
+
     @Override
     @Transactional
     public ContractDTO saveContract(MultipartFile documentFile) {
@@ -61,26 +64,32 @@ public class IndexingServiceImpl implements IndexingService {
     @Override
     @Transactional
     public String indexDocument(ContractDTO contractDTO) {
-        ContractIndex newIndex = new ContractIndex();
-        Optional<ContractTable> contractTableOpt = contractRepository.findById(contractDTO.getId());
-        if(contractTableOpt.isEmpty()){
-            throw new RuntimeException("Contract with id " + contractDTO.getId() + " not found");
+        try {
+            ContractIndex newIndex = new ContractIndex();
+            Optional<ContractTable> contractTableOpt = contractRepository.findById(contractDTO.getId());
+            if(contractTableOpt.isEmpty()){
+                throw new RuntimeException("Contract with id " + contractDTO.getId() + " not found");
+            }
+            ContractTable contractTable = contractTableOpt.get();
+            contractTable = contractMapper.mapFromContractDTOToContractTable(contractDTO, contractTable);
+            contractRepository.save(contractTable);
+
+            newIndex = contractMapper.mapFromContractTableToContractIndex(contractTable, newIndex);
+            GeoPoint geoPoint = geolocationService.getCoordinatesBasedOnAddress(newIndex.getGovernmentAddress());
+            newIndex.setLocation(geoPoint);
+            if (detectLanguage(contractTable.getContent()).equals("SR")) {
+                newIndex.setContentSr(contractTable.getContent());
+            } else {
+                newIndex.setContentEn(contractTable.getContent());
+            }
+
+            contractIndexRepository.save(newIndex);
+
+            return contractTable.getServerFilename();
+
+        } catch (Exception e) {
+            throw new RuntimeException("Error while indexing document");
         }
-        ContractTable contractTable = contractTableOpt.get();
-        contractTable = contractMapper.mapFromContractDTOToContractTable(contractDTO, contractTable);
-        contractRepository.save(contractTable);
-
-        newIndex = contractMapper.mapFromContractTableToContractIndex(contractTable, newIndex);
-
-        if (detectLanguage(contractTable.getContent()).equals("SR")) {
-            newIndex.setContentSr(contractTable.getContent());
-        } else {
-            newIndex.setContentEn(contractTable.getContent());
-        }
-
-        contractIndexRepository.save(newIndex);
-
-        return contractTable.getServerFilename();
     }
 
     private String extractDocumentContent(MultipartFile multipartPdfFile) {
