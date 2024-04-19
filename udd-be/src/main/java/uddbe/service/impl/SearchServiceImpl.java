@@ -135,7 +135,7 @@ public class SearchServiceImpl implements SearchService {
     private Page<ContractIndex> runQuery(NativeQuery searchQuery) {
 
         var searchHits = elasticsearchTemplate.search(searchQuery, ContractIndex.class,
-            IndexCoordinates.of("dummy_index"));
+            IndexCoordinates.of("document_index"));
 
         var searchHitsPaged = SearchHitSupport.searchPageFor(searchHits, searchQuery.getPageable());
 

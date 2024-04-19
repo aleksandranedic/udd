@@ -1,4 +1,14 @@
+import { useState } from "react";
+import { useAppDispatch } from "../store/types";
+import { basicSearch } from "../store/actions/contract-actions";
+
 export const BasicSearch: React.FunctionComponent = () => {
+    const [query, setQuery] = useState<string>('');
+    const dispatch = useAppDispatch();
+    const search = async () => {
+        console.log('Searching for ' + query);
+        await dispatch(basicSearch(query));
+    };
     return (
         <div className="w-full flex h-full">
             <div className="border-e border-light-gray h-full pe-8 w-[40%]">
@@ -8,8 +18,8 @@ export const BasicSearch: React.FunctionComponent = () => {
                     and perform <strong>full-text </strong> search for both contract and law content.
                 </span>
                 <div className="flex gap-10">
-                    <input type="text" className="w-2/3" placeholder="Enter query" />
-                    <button className="primary-button">Search</button>
+                    <input type="text" className="w-2/3" placeholder="Enter query" value={query} onChange={e => setQuery(e.target.value)}/>
+                    <button className="primary-button" onClick={() => search()}>Search</button>
                 </div>
 
                 <span className="font-extralight mt-32 mb-12 block">

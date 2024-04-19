@@ -23,4 +23,5 @@ public class ContractDTO {
     private String clientSignatorySurname;
     private String agencySignatoryName;
     private String agencySignatorySurname;
+    private String lawContent;
 }

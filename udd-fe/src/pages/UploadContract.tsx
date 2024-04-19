@@ -3,6 +3,7 @@ import { useAppDispatch } from '../store/types';
 import { useRef, useState } from 'react';
 import { submitContract } from '../store/actions/contract-actions';
 import { ContractComp } from '../components/Contract';
+import { DocumentType } from '../types/document';
 
 export const UploadContract: React.FunctionComponent = () => {
     const [inputFileLabel, setInputFileLabel] = useState('Click to upload contract');
@@ -38,7 +39,7 @@ export const UploadContract: React.FunctionComponent = () => {
                 </div>
             </div>
 
-            <ContractComp editable/>
+            <ContractComp editable type={DocumentType.Contract}/>
         </div>
     );
 }

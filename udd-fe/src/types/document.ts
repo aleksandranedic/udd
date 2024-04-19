@@ -14,6 +14,7 @@ export interface Contract {
     clientSignatorySurname?: string;
     agencySignatoryName?: string;
     agencySignatorySurname?: string;
+    lawContent?: string;
 }
 
 export const ContractName = Object.freeze({
@@ -31,9 +32,10 @@ export const ContractName = Object.freeze({
     clientSignatorySurname: "Client surname",
     agencySignatoryName: "Agency name",
     agencySignatorySurname: "Agency surname",
+    lawContent: "Law content",
 });
 
-export interface Law {
-    id?: string;
-    content: string;
+export enum DocumentType {
+    Contract,
+    Law,
 }

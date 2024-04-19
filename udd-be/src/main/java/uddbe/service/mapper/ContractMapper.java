@@ -7,25 +7,6 @@ import uddbe.model.ContractTable;
 
 @Service
 public class ContractMapper {
-    public ContractDTO mapFromContractTableToContractDTO(ContractTable contractTable) {
-        return new ContractDTO(
-            contractTable.getId(),
-            contractTable.getContent(),
-            contractTable.getAgencyAddress(),
-            contractTable.getAgencyEmail(),
-            contractTable.getAgencyPhone(),
-            contractTable.getGovernmentName(),
-            contractTable.getGovernmentLevel(),
-            contractTable.getGovernmentAddress(),
-            contractTable.getGovernmentEmail(),
-            contractTable.getGovernmentPhone(),
-            contractTable.getContractTitle(),
-            contractTable.getClientSignatoryName(),
-            contractTable.getClientSignatorySurname(),
-            contractTable.getAgencySignatoryName(),
-            contractTable.getAgencySignatorySurname()
-        );
-    }
 
     public ContractTable mapFromContractDTOToContractTable(ContractDTO contractDTO, ContractTable contractTable) {
         contractTable.setContent(contractDTO.getContent());

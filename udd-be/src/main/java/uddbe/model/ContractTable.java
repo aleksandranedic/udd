@@ -73,4 +73,7 @@ public class ContractTable {
 
     @Column(name = "agency_signatory_surname")
     private String agencySignatorySurname;
+
+    @Column(name = "law_content", columnDefinition = "TEXT")
+    private String lawContent;
 }

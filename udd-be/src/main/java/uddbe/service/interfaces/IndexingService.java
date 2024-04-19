@@ -9,4 +9,7 @@ public interface IndexingService {
     ContractDTO saveContract(MultipartFile documentFile);
 
     String indexDocument(ContractDTO contractDTO);
+    ContractDTO saveLaw(MultipartFile documentFile);
+
+    String indexLaw(ContractDTO contractDTO);
 }

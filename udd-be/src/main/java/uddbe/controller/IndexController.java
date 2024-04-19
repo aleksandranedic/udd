@@ -27,4 +27,17 @@ public class IndexController {
     public String indexContract(@RequestBody ContractDTO contract) {
         return indexingService.indexDocument(contract);
     }
+
+    @PostMapping(value = "law/save")
+    @ResponseStatus(HttpStatus.CREATED)
+    public ContractDTO addLawFile(
+            @ModelAttribute ContractFileDTO documentFile) {
+        return indexingService.saveLaw(documentFile.file());
+    }
+
+    @PostMapping(value = "law")
+    @ResponseStatus(HttpStatus.CREATED)
+    public String indexLaw(@RequestBody ContractDTO contract) {
+        return indexingService.indexLaw(contract);
+    }
 }

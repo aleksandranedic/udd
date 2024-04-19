@@ -1,7 +1,7 @@
 // counterSlice.ts
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Contract } from "../../types/document";
-import { indexContract, submitContract } from "../actions/contract-actions";
+import { indexContract, indexLaw, submitContract, submitLaw } from "../actions/contract-actions";
 
 interface ContractState {
   contract: Contract | null;
@@ -19,6 +19,10 @@ export const contractSlice = createSlice({
   reducers: {
     setContract: (state, action: PayloadAction<Partial<Contract>>) => {
       state = { ...state, contract: state.contract !== null ? {...state.contract,...action.payload }: {...action.payload}};
+      return state;
+    },
+    resetContract: (state) => {
+      state = { ...state, contract: null };
       return state;
     },
   },
@@ -52,9 +56,39 @@ export const contractSlice = createSlice({
       state = {...state, loading: false};
       return state;
     });
+
+    builder.addCase(submitLaw.pending, (state: ContractState) => {
+      state = { ...state, loading: true };
+      return state;
+    });
+    builder.addCase(
+      submitLaw.fulfilled,
+      (state: ContractState, action) => {
+        const newContract = action.payload as Contract;
+        state = { ...state, contract: newContract, loading: false };
+        return state;
+      }
+    );
+    builder.addCase(submitLaw.rejected, (state: ContractState) => {
+      state = {...state, loading: false};
+      return state;
+    });
+    builder.addCase(indexLaw.pending, (state: ContractState) => {
+      state = { ...state, loading: true };
+      return state;
+    });
+    builder.addCase(indexLaw.fulfilled, (state: ContractState, action) => {
+        alert(action.payload);
+        return state;
+      }
+    );
+    builder.addCase(indexLaw.rejected, (state: ContractState) => {
+      state = {...state, loading: false};
+      return state;
+    });
   },
 });
 
-export const { setContract } = contractSlice.actions;
+export const { setContract, resetContract } = contractSlice.actions;
 
 export default contractSlice.reducer;

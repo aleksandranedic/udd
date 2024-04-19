@@ -92,6 +92,53 @@ public class IndexingServiceImpl implements IndexingService {
         }
     }
 
+    @Override
+    @Transactional
+    public ContractDTO saveLaw(MultipartFile documentFile) {
+        var newEntity = new ContractTable();
+        var title = Objects.requireNonNull(documentFile.getOriginalFilename()).split("\\.")[0];
+        newEntity.setTitle(title);
+        newEntity.setMimeType(detectMimeType(documentFile));
+        var documentContent = extractDocumentContent(documentFile);
+        ContractDTO contractDTO = new ContractDTO();
+        newEntity.setLawContent(documentContent);
+        var serverFilename = fileService.store(documentFile, UUID.randomUUID().toString());
+        newEntity.setServerFilename(serverFilename);
+        var savedContract = contractRepository.save(newEntity);
+        contractDTO.setId(savedContract.getId());
+        contractDTO.setLawContent(savedContract.getLawContent());
+        return contractDTO;
+    }
+
+    @Override
+    @Transactional
+    public String indexLaw(ContractDTO contractDTO) {
+        try {
+            ContractIndex newIndex = new ContractIndex();
+            Optional<ContractTable> contractTableOpt = contractRepository.findById(contractDTO.getId());
+            if(contractTableOpt.isEmpty()){
+                throw new RuntimeException("Contract with id " + contractDTO.getId() + " not found");
+            }
+            ContractTable contractTable = contractTableOpt.get();
+            contractTable.setLawContent(contractDTO.getLawContent());
+            contractRepository.save(contractTable);
+
+            if (detectLanguage(contractTable.getLawContent()).equals("SR")) {
+                newIndex.setLawContentSr(contractTable.getLawContent());
+            } else {
+                newIndex.setLawContentEn(contractTable.getLawContent());
+            }
+
+            contractIndexRepository.save(newIndex);
+
+            return contractTable.getServerFilename();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("Error while indexing document");
+        }
+    }
+
     private String extractDocumentContent(MultipartFile multipartPdfFile) {
         String documentContent;
         try (var pdfFile = multipartPdfFile.getInputStream()) {
