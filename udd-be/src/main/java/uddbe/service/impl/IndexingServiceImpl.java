@@ -128,6 +128,9 @@ public class IndexingServiceImpl implements IndexingService {
             } else {
                 newIndex.setLawContentEn(contractTable.getLawContent());
             }
+            newIndex.setDatabaseId(contractTable.getId());
+            newIndex.setServerFilename(contractTable.getServerFilename());
+            newIndex.setTitle(contractTable.getTitle());
 
             contractIndexRepository.save(newIndex);
 
