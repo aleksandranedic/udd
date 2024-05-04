@@ -57,7 +57,7 @@ export const SearchResults: React.FunctionComponent = () => {
         a.click();
     }
 
-    if (searchResults === null) return (
+    if (!searchResults) return (
     <div className="flex flex-col w-full items-center justify-center relative h-1/3">
         <span className="z-50 absolute top-1/2 text-6xl">Search for results</span>
         <div className="z-10 absolute -top-20">
@@ -73,7 +73,7 @@ export const SearchResults: React.FunctionComponent = () => {
             </div>
         </div>
         )
-    return <div className="overflow-auto">
+    return <div className="overflow-auto px-5">
         {searchResults[index].highlights && Object.keys(searchResults[index].highlights!).length > 0 && <Highlights highlights={searchResults[index].highlights!}/> }
         <div className="w-full items-center justify-between flex my-10">
         <span className="font-bold">Whole document:</span>

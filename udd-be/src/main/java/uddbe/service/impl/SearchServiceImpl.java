@@ -5,6 +5,7 @@ import co.elastic.clients.elasticsearch._types.query_dsl.BoolQuery;
 import co.elastic.clients.elasticsearch._types.query_dsl.Query;
 import co.elastic.clients.elasticsearch._types.query_dsl.TermsQueryField;
 import org.springframework.data.elasticsearch.core.SearchHit;
+import uddbe.dto.AdvancedSearchParameter;
 import uddbe.dto.SearchResult;
 import uddbe.dto.SearchResultContent;
 import uddbe.exceptionhandling.exception.MalformedQueryException;
@@ -22,6 +23,7 @@ import org.springframework.data.elasticsearch.core.query.highlight.HighlightFiel
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.stream.Collectors;
 
 import lombok.RequiredArgsConstructor;
@@ -58,15 +60,13 @@ public class SearchServiceImpl implements SearchService {
     }
 
     @Override
-    public SearchResult advancedSearch(List<String> expression, Pageable pageable) {
-        if (expression.size() != 3) {
+    public SearchResult advancedSearch(List<AdvancedSearchParameter> expressions, Pageable pageable) {
+        if (expressions.size() < 1) {
             throw new MalformedQueryException("Search query malformed.");
         }
 
-        String operation = expression.get(1);
-        expression.remove(1);
         var searchQueryBuilder =
-            new NativeQueryBuilder().withQuery(buildAdvancedSearchQuery(expression, operation))
+            new NativeQueryBuilder().withQuery(buildAdvancedSearchQuery(expressions))
                 .withPageable(pageable);
 
         var result = runQuery(searchQueryBuilder.build());
@@ -118,33 +118,94 @@ public class SearchServiceImpl implements SearchService {
         })))._toQuery();
     }
 
-    private Query buildAdvancedSearchQuery(List<String> operands, String operation) {
-        return BoolQuery.of(q -> q.must(mb -> mb.bool(b -> {
-            var field1 = operands.get(0).split(":")[0];
-            var value1 = operands.get(0).split(":")[1];
-            var field2 = operands.get(1).split(":")[0];
-            var value2 = operands.get(1).split(":")[1];
+    private String extractField(String field) {
+        switch (field) {
+            case "Contract content":
+                return "content_sr";
+            case "Law content":
+                return "law_content_sr";
+            case "Administrative level":
+                return "government_level";
+            case "Government name":
+                return "government_name";
+            default:
+                return "agency_signatory_name";
+        }
 
-            switch (operation) {
-                case "AND":
-                    b.must(sb -> sb.match(
-                        m -> m.field(field1).fuzziness(Fuzziness.ONE.asString()).query(value1)));
-                    b.must(sb -> sb.match(m -> m.field(field2).query(value2)));
-                    break;
-                case "OR":
-                    b.should(sb -> sb.match(
-                        m -> m.field(field1).fuzziness(Fuzziness.ONE.asString()).query(value1)));
-                    b.should(sb -> sb.match(m -> m.field(field2).query(value2)));
-                    break;
-                case "NOT":
-                    b.must(sb -> sb.match(
-                        m -> m.field(field1).fuzziness(Fuzziness.ONE.asString()).query(value1)));
-                    b.mustNot(sb -> sb.match(m -> m.field(field2).query(value2)));
-                    break;
-            }
+    }
 
+    public Query buildAdvancedSearchQuery(List<AdvancedSearchParameter> operands) {
+        return BoolQuery.of(b -> {
+            AtomicBoolean firstToken = new AtomicBoolean(true);
+            operands.forEach(operand -> {
+                String field = extractField(operand.getField());
+                String value = operand.getValue();
+                String operator = operand.getOperator();
+                boolean isPhrase = operand.isPhrase();
+                boolean isNegation = operand.isNegation();
+
+                if (isPhrase){
+                    if (firstToken.get()){
+                        if (operands.size() > 1){
+                            if (isNegation) {
+                                b.mustNot(s -> s.matchPhrase(mt -> mt.field(field).query(value)));
+                            }
+                            else if (operands.get(1).getOperator().equalsIgnoreCase("or")){
+                                b.should(s -> s.matchPhrase(mt -> mt.field(field).query(value)));
+                            } else {
+                                b.must(s -> s.matchPhrase(mt -> mt.field(field).query(value)));
+                            }
+                        }else {
+                            if (isNegation) {
+                                b.mustNot(s -> s.matchPhrase(mt -> mt.field(field).query(value)));
+                            } else {
+                                b.must(s -> s.matchPhrase(mt -> mt.field(field).query(value)));
+                            }
+                        }
+                        firstToken.set(false);
+                    }else{
+                        if (isNegation) {
+                            b.mustNot(mn -> mn.matchPhrase(mt -> mt.field(field).query(value)));
+                        }
+                        else if (operator.equalsIgnoreCase("AND")) {
+                            b.must(m -> m.matchPhrase(mt -> mt.field(field).query(value)));
+                        } else if (operator.equalsIgnoreCase("OR")) {
+                            b.should(s -> s.matchPhrase(mt -> mt.field(field).query(value)));
+                        }
+                    }
+                }else{
+                    if (firstToken.get()){
+                        if (operands.size() > 1){
+                            if (isNegation) {
+                                b.mustNot(s -> s.match(mt -> mt.field(field).query(value)));
+                            }
+                            else if (operands.get(1).getOperator().equalsIgnoreCase("or")){
+                                b.should(s -> s.match(mt -> mt.field(field).query(value)));
+                            }else{
+                                b.must(s -> s.match(mt -> mt.field(field).query(value)));
+                            }
+                        }else{
+                            if (isNegation) {
+                                b.mustNot(s -> s.match(mt -> mt.field(field).query(value)));
+                            } else {
+                                b.must(s -> s.match(mt -> mt.field(field).query(value)));
+                            }
+                        }
+                        firstToken.set(false);
+                    }else{
+                        if (isNegation) {
+                            b.mustNot(mn -> mn.match(mt -> mt.field(field).query(value)));
+                        }
+                        else if (operator.equalsIgnoreCase("AND")) {
+                            b.must(m -> m.match(mt -> mt.field(field).query(value)));
+                        } else if (operator.equalsIgnoreCase("OR")) {
+                            b.should(s -> s.match(mt -> mt.field(field).query(value)));
+                        }
+                    }
+                }
+            });
             return b;
-        })))._toQuery();
+        })._toQuery();
     }
 
     private SearchResult runQuery(NativeQuery searchQuery) {

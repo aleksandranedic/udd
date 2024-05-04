@@ -25,12 +25,11 @@ export enum ParameterEqualityOperand {
 }
 
 export class ParameterObject {
-    constructor(public field: ParameterField, public equalityOperand: ParameterEqualityOperand, public value: string, public phrase: boolean, public negation: boolean, public operand?: ParameterOperand) {
+    constructor(public field: ParameterField, public equalityOperand: ParameterEqualityOperand, public value: string, public phrase: boolean, public operator?: ParameterOperand) {
         this.field = field;
         this.equalityOperand = equalityOperand;
         this.value = value;
-        this.operand = operand;
+        this.operator = operator;
         this.phrase = phrase;
-        this.negation = negation;
     }
 }

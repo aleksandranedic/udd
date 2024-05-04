@@ -577,3 +577,853 @@ This generated password is for development use only. Your security configuration
 2024-05-04T12:15:58.051+02:00  INFO 72380 --- [udd-be] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-05-04T12:15:58.053+02:00  INFO 72380 --- [udd-be] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2024-05-04T12:15:58.058+02:00  INFO 72380 --- [udd-be] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-04T12:50:08.418+02:00  INFO 76016 --- [udd-be] [main] uddbe.DemoApplication                    : Starting DemoApplication using Java 19.0.2 with PID 76016 (/mnt/ACA058A9A0587C30/Faks/Master/Sandra/udd/projekat/udd/udd-be/target/classes started by pavle in /mnt/ACA058A9A0587C30/Faks/Master/Sandra/udd/projekat/udd/udd-be)
+2024-05-04T12:50:08.420+02:00  INFO 76016 --- [udd-be] [main] uddbe.DemoApplication                    : No active profile set, falling back to 1 default profile: "default"
+2024-05-04T12:50:08.821+02:00  INFO 76016 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T12:50:08.823+02:00  INFO 76016 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2024-05-04T12:50:08.831+02:00  INFO 76016 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 Elasticsearch repository interfaces.
+2024-05-04T12:50:08.968+02:00  INFO 76016 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T12:50:08.968+02:00  INFO 76016 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2024-05-04T12:50:08.993+02:00  INFO 76016 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data Elasticsearch - Could not safely identify store assignment for repository candidate interface uddbe.respository.ContractRepository; If you want this repository to be a Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ElasticsearchRepository, org.springframework.data.elasticsearch.repository.ElasticsearchRepository
+2024-05-04T12:50:09.007+02:00  INFO 76016 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38 ms. Found 1 Elasticsearch repository interface.
+2024-05-04T12:50:09.011+02:00  INFO 76016 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T12:50:09.012+02:00  INFO 76016 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2024-05-04T12:50:09.018+02:00  INFO 76016 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data Reactive Elasticsearch - Could not safely identify store assignment for repository candidate interface uddbe.respository.ContractRepository; If you want this repository to be a Reactive Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ReactiveElasticsearchRepository
+2024-05-04T12:50:09.019+02:00  INFO 76016 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2024-05-04T12:50:09.026+02:00  INFO 76016 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T12:50:09.027+02:00  INFO 76016 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-04T12:50:09.037+02:00  INFO 76016 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface uddbe.indexrepository.ContractIndexRepository; If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: jakarta.persistence.Entity, jakarta.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository
+2024-05-04T12:50:09.043+02:00  INFO 76016 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 1 JPA repository interface.
+2024-05-04T12:50:09.475+02:00  INFO 76016 --- [udd-be] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-05-04T12:50:09.485+02:00  INFO 76016 --- [udd-be] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-04T12:50:09.485+02:00  INFO 76016 --- [udd-be] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-04T12:50:09.527+02:00  INFO 76016 --- [udd-be] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-04T12:50:09.528+02:00  INFO 76016 --- [udd-be] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1076 ms
+2024-05-04T12:50:09.664+02:00  INFO 76016 --- [udd-be] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-04T12:50:09.722+02:00  INFO 76016 --- [udd-be] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-04T12:50:09.755+02:00  INFO 76016 --- [udd-be] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-04T12:50:09.977+02:00  INFO 76016 --- [udd-be] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-04T12:50:10.005+02:00  INFO 76016 --- [udd-be] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-04T12:50:10.248+02:00  INFO 76016 --- [udd-be] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5a82bc58
+2024-05-04T12:50:10.250+02:00  INFO 76016 --- [udd-be] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-04T12:50:10.286+02:00  WARN 76016 --- [udd-be] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-04T12:50:10.939+02:00  INFO 76016 --- [udd-be] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-04T12:50:11.004+02:00  INFO 76016 --- [udd-be] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-04T12:50:12.191+02:00  WARN 76016 --- [udd-be] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 5600e2e4-93a8-4076-b38f-36af5167661b
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-05-04T12:50:12.348+02:00  INFO 76016 --- [udd-be] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@feb57b4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7893b8c, org.springframework.security.web.context.SecurityContextHolderFilter@3ce71bbb, org.springframework.security.web.header.HeaderWriterFilter@6ceeb592, org.springframework.web.filter.CorsFilter@45398bb0, org.springframework.security.web.authentication.logout.LogoutFilter@509d999c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5f1eff72, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@27f43664, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@35ffe3ac, org.springframework.security.web.session.SessionManagementFilter@19487d13, org.springframework.security.web.access.ExceptionTranslationFilter@664c0466, org.springframework.security.web.access.intercept.AuthorizationFilter@c509742]
+2024-05-04T12:50:12.578+02:00  INFO 76016 --- [udd-be] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-05-04T12:50:12.585+02:00  INFO 76016 --- [udd-be] [main] uddbe.DemoApplication                    : Started DemoApplication in 4.609 seconds (process running for 5.219)
+2024-05-04T14:20:07.643+02:00  INFO 76016 --- [udd-be] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-04T14:20:07.649+02:00  INFO 76016 --- [udd-be] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-04T14:20:07.654+02:00  INFO 76016 --- [udd-be] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-04T14:20:12.029+02:00  INFO 100559 --- [udd-be] [main] uddbe.DemoApplication                    : Starting DemoApplication using Java 19.0.2 with PID 100559 (/mnt/ACA058A9A0587C30/Faks/Master/Sandra/udd/projekat/udd/udd-be/target/classes started by pavle in /mnt/ACA058A9A0587C30/Faks/Master/Sandra/udd/projekat/udd/udd-be)
+2024-05-04T14:20:12.031+02:00  INFO 100559 --- [udd-be] [main] uddbe.DemoApplication                    : No active profile set, falling back to 1 default profile: "default"
+2024-05-04T14:20:12.427+02:00  INFO 100559 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T14:20:12.428+02:00  INFO 100559 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2024-05-04T14:20:12.435+02:00  INFO 100559 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 Elasticsearch repository interfaces.
+2024-05-04T14:20:12.556+02:00  INFO 100559 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T14:20:12.556+02:00  INFO 100559 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2024-05-04T14:20:12.580+02:00  INFO 100559 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data Elasticsearch - Could not safely identify store assignment for repository candidate interface uddbe.respository.ContractRepository; If you want this repository to be a Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ElasticsearchRepository, org.springframework.data.elasticsearch.repository.ElasticsearchRepository
+2024-05-04T14:20:12.593+02:00  INFO 100559 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 1 Elasticsearch repository interface.
+2024-05-04T14:20:12.596+02:00  INFO 100559 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T14:20:12.597+02:00  INFO 100559 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2024-05-04T14:20:12.603+02:00  INFO 100559 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data Reactive Elasticsearch - Could not safely identify store assignment for repository candidate interface uddbe.respository.ContractRepository; If you want this repository to be a Reactive Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ReactiveElasticsearchRepository
+2024-05-04T14:20:12.603+02:00  INFO 100559 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2024-05-04T14:20:12.610+02:00  INFO 100559 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T14:20:12.611+02:00  INFO 100559 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-04T14:20:12.619+02:00  INFO 100559 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface uddbe.indexrepository.ContractIndexRepository; If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: jakarta.persistence.Entity, jakarta.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository
+2024-05-04T14:20:12.624+02:00  INFO 100559 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 1 JPA repository interface.
+2024-05-04T14:20:13.004+02:00  INFO 100559 --- [udd-be] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-05-04T14:20:13.013+02:00  INFO 100559 --- [udd-be] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-04T14:20:13.013+02:00  INFO 100559 --- [udd-be] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-04T14:20:13.048+02:00  INFO 100559 --- [udd-be] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-04T14:20:13.049+02:00  INFO 100559 --- [udd-be] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 988 ms
+2024-05-04T14:20:13.162+02:00  INFO 100559 --- [udd-be] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-04T14:20:13.217+02:00  INFO 100559 --- [udd-be] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-04T14:20:13.249+02:00  INFO 100559 --- [udd-be] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-04T14:20:13.450+02:00  INFO 100559 --- [udd-be] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-04T14:20:13.473+02:00  INFO 100559 --- [udd-be] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-04T14:20:13.674+02:00  INFO 100559 --- [udd-be] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@f10d055
+2024-05-04T14:20:13.675+02:00  INFO 100559 --- [udd-be] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-04T14:20:13.712+02:00  WARN 100559 --- [udd-be] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-04T14:20:14.326+02:00  INFO 100559 --- [udd-be] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-04T14:20:14.430+02:00  INFO 100559 --- [udd-be] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-04T14:20:15.516+02:00  WARN 100559 --- [udd-be] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: bb3ef093-6e35-43d9-b922-64b17c43c0a1
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-05-04T14:20:15.680+02:00  INFO 100559 --- [udd-be] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3502b614, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1fdbba0d, org.springframework.security.web.context.SecurityContextHolderFilter@12922d53, org.springframework.security.web.header.HeaderWriterFilter@118d7e0e, org.springframework.web.filter.CorsFilter@2ef5df8f, org.springframework.security.web.authentication.logout.LogoutFilter@47e89fed, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7c07deff, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@65374526, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@708f238f, org.springframework.security.web.session.SessionManagementFilter@1d9016fe, org.springframework.security.web.access.ExceptionTranslationFilter@7fd7965b, org.springframework.security.web.access.intercept.AuthorizationFilter@453de9d0]
+2024-05-04T14:20:15.874+02:00  INFO 100559 --- [udd-be] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-05-04T14:20:15.881+02:00  INFO 100559 --- [udd-be] [main] uddbe.DemoApplication                    : Started DemoApplication in 4.163 seconds (process running for 4.712)
+2024-05-04T14:20:28.439+02:00  INFO 100559 --- [udd-be] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-04T14:20:28.441+02:00  INFO 100559 --- [udd-be] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-04T14:20:28.444+02:00  INFO 100559 --- [udd-be] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-04T14:22:46.622+02:00  INFO 101234 --- [udd-be] [main] uddbe.DemoApplication                    : Starting DemoApplication using Java 19.0.2 with PID 101234 (/mnt/ACA058A9A0587C30/Faks/Master/Sandra/udd/projekat/udd/udd-be/target/classes started by pavle in /mnt/ACA058A9A0587C30/Faks/Master/Sandra/udd/projekat/udd/udd-be)
+2024-05-04T14:22:46.623+02:00  INFO 101234 --- [udd-be] [main] uddbe.DemoApplication                    : No active profile set, falling back to 1 default profile: "default"
+2024-05-04T14:22:46.956+02:00  INFO 101234 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T14:22:46.957+02:00  INFO 101234 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2024-05-04T14:22:46.963+02:00  INFO 101234 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 Elasticsearch repository interfaces.
+2024-05-04T14:22:47.101+02:00  INFO 101234 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T14:22:47.102+02:00  INFO 101234 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2024-05-04T14:22:47.127+02:00  INFO 101234 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data Elasticsearch - Could not safely identify store assignment for repository candidate interface uddbe.respository.ContractRepository; If you want this repository to be a Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ElasticsearchRepository, org.springframework.data.elasticsearch.repository.ElasticsearchRepository
+2024-05-04T14:22:47.144+02:00  INFO 101234 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41 ms. Found 1 Elasticsearch repository interface.
+2024-05-04T14:22:47.148+02:00  INFO 101234 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T14:22:47.149+02:00  INFO 101234 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2024-05-04T14:22:47.155+02:00  INFO 101234 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data Reactive Elasticsearch - Could not safely identify store assignment for repository candidate interface uddbe.respository.ContractRepository; If you want this repository to be a Reactive Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ReactiveElasticsearchRepository
+2024-05-04T14:22:47.155+02:00  INFO 101234 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2024-05-04T14:22:47.162+02:00  INFO 101234 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T14:22:47.163+02:00  INFO 101234 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-04T14:22:47.171+02:00  INFO 101234 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface uddbe.indexrepository.ContractIndexRepository; If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: jakarta.persistence.Entity, jakarta.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository
+2024-05-04T14:22:47.176+02:00  INFO 101234 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 1 JPA repository interface.
+2024-05-04T14:22:47.523+02:00  INFO 101234 --- [udd-be] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-05-04T14:22:47.530+02:00  INFO 101234 --- [udd-be] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-04T14:22:47.531+02:00  INFO 101234 --- [udd-be] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-04T14:22:47.563+02:00  INFO 101234 --- [udd-be] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-04T14:22:47.563+02:00  INFO 101234 --- [udd-be] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 914 ms
+2024-05-04T14:22:47.660+02:00  INFO 101234 --- [udd-be] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-04T14:22:47.709+02:00  INFO 101234 --- [udd-be] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-04T14:22:47.760+02:00  INFO 101234 --- [udd-be] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-04T14:22:47.971+02:00  INFO 101234 --- [udd-be] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-04T14:22:47.996+02:00  INFO 101234 --- [udd-be] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-04T14:22:48.198+02:00  INFO 101234 --- [udd-be] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@66e1b2a
+2024-05-04T14:22:48.200+02:00  INFO 101234 --- [udd-be] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-04T14:22:48.228+02:00  WARN 101234 --- [udd-be] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-04T14:22:48.791+02:00  INFO 101234 --- [udd-be] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-04T14:22:48.835+02:00  INFO 101234 --- [udd-be] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-04T14:22:49.906+02:00  WARN 101234 --- [udd-be] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 5b46a7bc-1c45-4d8d-9136-1ef03dc98c16
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-05-04T14:22:50.086+02:00  INFO 101234 --- [udd-be] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5276330a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@221961f2, org.springframework.security.web.context.SecurityContextHolderFilter@11703cc8, org.springframework.security.web.header.HeaderWriterFilter@360ccb68, org.springframework.web.filter.CorsFilter@541d8a9e, org.springframework.security.web.authentication.logout.LogoutFilter@4407f129, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2f6ede9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4583a186, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@51c0346d, org.springframework.security.web.session.SessionManagementFilter@47a72c32, org.springframework.security.web.access.ExceptionTranslationFilter@37d50217, org.springframework.security.web.access.intercept.AuthorizationFilter@52e44f71]
+2024-05-04T14:22:50.292+02:00  INFO 101234 --- [udd-be] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-05-04T14:22:50.298+02:00  INFO 101234 --- [udd-be] [main] uddbe.DemoApplication                    : Started DemoApplication in 3.948 seconds (process running for 4.444)
+2024-05-04T14:23:29.352+02:00  INFO 101234 --- [udd-be] [http-nio-0.0.0.0-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-04T14:23:29.354+02:00  INFO 101234 --- [udd-be] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-04T14:23:29.354+02:00  INFO 101234 --- [udd-be] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-05-04T14:24:14.532+02:00 ERROR 101234 --- [udd-be] [http-nio-0.0.0.0-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "String.equalsIgnoreCase(String)" because "operator" is null] with root cause
+
+java.lang.NullPointerException: Cannot invoke "String.equalsIgnoreCase(String)" because "operator" is null
+	at uddbe.service.impl.SearchServiceImpl.lambda$buildAdvancedSearchQuery$74(SearchServiceImpl.java:188) ~[classes/:na]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at uddbe.service.impl.SearchServiceImpl.lambda$buildAdvancedSearchQuery$75(SearchServiceImpl.java:129) ~[classes/:na]
+	at co.elastic.clients.elasticsearch._types.query_dsl.BoolQuery.of(BoolQuery.java:74) ~[elasticsearch-java-8.10.4.jar:na]
+	at uddbe.service.impl.SearchServiceImpl.buildAdvancedSearchQuery(SearchServiceImpl.java:127) ~[classes/:na]
+	at uddbe.service.impl.SearchServiceImpl.advancedSearch(SearchServiceImpl.java:69) ~[classes/:na]
+	at uddbe.controller.SearchController.advancedSearch(SearchController.java:32) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:925) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:830) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.19.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.19.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230) ~[spring-security-config-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at java.base/java.lang.Thread.run(Thread.java:1589) ~[na:na]
+
+2024-05-04T14:25:22.259+02:00 ERROR 101234 --- [udd-be] [http-nio-0.0.0.0-8080-exec-5] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "String.equalsIgnoreCase(String)" because "operator" is null] with root cause
+
+java.lang.NullPointerException: Cannot invoke "String.equalsIgnoreCase(String)" because "operator" is null
+	at uddbe.service.impl.SearchServiceImpl.lambda$buildAdvancedSearchQuery$74(SearchServiceImpl.java:188) ~[classes/:na]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at uddbe.service.impl.SearchServiceImpl.lambda$buildAdvancedSearchQuery$75(SearchServiceImpl.java:129) ~[classes/:na]
+	at co.elastic.clients.elasticsearch._types.query_dsl.BoolQuery.of(BoolQuery.java:74) ~[elasticsearch-java-8.10.4.jar:na]
+	at uddbe.service.impl.SearchServiceImpl.buildAdvancedSearchQuery(SearchServiceImpl.java:127) ~[classes/:na]
+	at uddbe.service.impl.SearchServiceImpl.advancedSearch(SearchServiceImpl.java:69) ~[classes/:na]
+	at uddbe.controller.SearchController.advancedSearch(SearchController.java:32) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:925) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:830) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.19.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.19.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230) ~[spring-security-config-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at java.base/java.lang.Thread.run(Thread.java:1589) ~[na:na]
+
+2024-05-04T14:43:47.193+02:00  INFO 13913 --- [udd-be] [main] uddbe.DemoApplication                    : Starting DemoApplication using Java 19.0.2 with PID 13913 (/mnt/ACA058A9A0587C30/Faks/Master/Sandra/udd/projekat/udd/udd-be/target/classes started by pavle in /mnt/ACA058A9A0587C30/Faks/Master/Sandra/udd/projekat/udd/udd-be)
+2024-05-04T14:43:47.195+02:00  INFO 13913 --- [udd-be] [main] uddbe.DemoApplication                    : No active profile set, falling back to 1 default profile: "default"
+2024-05-04T14:43:47.679+02:00  INFO 13913 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T14:43:47.680+02:00  INFO 13913 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2024-05-04T14:43:47.690+02:00  INFO 13913 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 Elasticsearch repository interfaces.
+2024-05-04T14:43:47.853+02:00  INFO 13913 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T14:43:47.853+02:00  INFO 13913 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2024-05-04T14:43:47.885+02:00  INFO 13913 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data Elasticsearch - Could not safely identify store assignment for repository candidate interface uddbe.respository.ContractRepository; If you want this repository to be a Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ElasticsearchRepository, org.springframework.data.elasticsearch.repository.ElasticsearchRepository
+2024-05-04T14:43:47.904+02:00  INFO 13913 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 1 Elasticsearch repository interface.
+2024-05-04T14:43:47.910+02:00  INFO 13913 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T14:43:47.910+02:00  INFO 13913 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2024-05-04T14:43:47.921+02:00  INFO 13913 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data Reactive Elasticsearch - Could not safely identify store assignment for repository candidate interface uddbe.respository.ContractRepository; If you want this repository to be a Reactive Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ReactiveElasticsearchRepository
+2024-05-04T14:43:47.921+02:00  INFO 13913 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2024-05-04T14:43:47.930+02:00  INFO 13913 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T14:43:47.932+02:00  INFO 13913 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-04T14:43:47.943+02:00  INFO 13913 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface uddbe.indexrepository.ContractIndexRepository; If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: jakarta.persistence.Entity, jakarta.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository
+2024-05-04T14:43:47.950+02:00  INFO 13913 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 1 JPA repository interface.
+2024-05-04T14:43:48.414+02:00  INFO 13913 --- [udd-be] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-05-04T14:43:48.424+02:00  INFO 13913 --- [udd-be] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-04T14:43:48.425+02:00  INFO 13913 --- [udd-be] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-04T14:43:48.483+02:00  INFO 13913 --- [udd-be] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-04T14:43:48.483+02:00  INFO 13913 --- [udd-be] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1252 ms
+2024-05-04T14:43:48.614+02:00  INFO 13913 --- [udd-be] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-04T14:43:48.674+02:00  INFO 13913 --- [udd-be] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-04T14:43:48.704+02:00  INFO 13913 --- [udd-be] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-04T14:43:48.913+02:00  INFO 13913 --- [udd-be] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-04T14:43:48.940+02:00  INFO 13913 --- [udd-be] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-04T14:43:49.767+02:00  INFO 13913 --- [udd-be] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2c815fdc
+2024-05-04T14:43:49.770+02:00  INFO 13913 --- [udd-be] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-04T14:43:50.013+02:00  WARN 13913 --- [udd-be] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-04T14:43:51.206+02:00  INFO 13913 --- [udd-be] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-04T14:43:51.278+02:00  INFO 13913 --- [udd-be] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-04T14:43:52.706+02:00  WARN 13913 --- [udd-be] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 93bcfa76-94bc-43e6-966e-7ce6323ee723
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-05-04T14:43:52.877+02:00  INFO 13913 --- [udd-be] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2e1b1d22, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@653c0c9c, org.springframework.security.web.context.SecurityContextHolderFilter@112f8f8f, org.springframework.security.web.header.HeaderWriterFilter@37d50217, org.springframework.web.filter.CorsFilter@5276330a, org.springframework.security.web.authentication.logout.LogoutFilter@1142843c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@11703cc8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6fc84468, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@221961f2, org.springframework.security.web.session.SessionManagementFilter@1c294a17, org.springframework.security.web.access.ExceptionTranslationFilter@44b99467, org.springframework.security.web.access.intercept.AuthorizationFilter@29ec5005]
+2024-05-04T14:43:53.111+02:00  INFO 13913 --- [udd-be] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-05-04T14:43:53.117+02:00  INFO 13913 --- [udd-be] [main] uddbe.DemoApplication                    : Started DemoApplication in 6.29 seconds (process running for 6.918)
+2024-05-04T14:44:10.707+02:00  INFO 13913 --- [udd-be] [http-nio-0.0.0.0-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-04T14:44:10.707+02:00  INFO 13913 --- [udd-be] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-04T14:44:10.709+02:00  INFO 13913 --- [udd-be] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-05-04T14:54:31.311+02:00  INFO 13913 --- [udd-be] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-04T14:54:31.314+02:00  INFO 13913 --- [udd-be] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-04T14:54:31.321+02:00  INFO 13913 --- [udd-be] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-04T14:54:35.016+02:00  INFO 15303 --- [udd-be] [main] uddbe.DemoApplication                    : Starting DemoApplication using Java 19.0.2 with PID 15303 (/mnt/ACA058A9A0587C30/Faks/Master/Sandra/udd/projekat/udd/udd-be/target/classes started by pavle in /mnt/ACA058A9A0587C30/Faks/Master/Sandra/udd/projekat/udd/udd-be)
+2024-05-04T14:54:35.018+02:00  INFO 15303 --- [udd-be] [main] uddbe.DemoApplication                    : No active profile set, falling back to 1 default profile: "default"
+2024-05-04T14:54:35.429+02:00  INFO 15303 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T14:54:35.430+02:00  INFO 15303 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2024-05-04T14:54:35.437+02:00  INFO 15303 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 Elasticsearch repository interfaces.
+2024-05-04T14:54:35.558+02:00  INFO 15303 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T14:54:35.558+02:00  INFO 15303 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2024-05-04T14:54:35.583+02:00  INFO 15303 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data Elasticsearch - Could not safely identify store assignment for repository candidate interface uddbe.respository.ContractRepository; If you want this repository to be a Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ElasticsearchRepository, org.springframework.data.elasticsearch.repository.ElasticsearchRepository
+2024-05-04T14:54:35.595+02:00  INFO 15303 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 1 Elasticsearch repository interface.
+2024-05-04T14:54:35.599+02:00  INFO 15303 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T14:54:35.599+02:00  INFO 15303 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2024-05-04T14:54:35.606+02:00  INFO 15303 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data Reactive Elasticsearch - Could not safely identify store assignment for repository candidate interface uddbe.respository.ContractRepository; If you want this repository to be a Reactive Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ReactiveElasticsearchRepository
+2024-05-04T14:54:35.606+02:00  INFO 15303 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2024-05-04T14:54:35.614+02:00  INFO 15303 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T14:54:35.614+02:00  INFO 15303 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-04T14:54:35.622+02:00  INFO 15303 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface uddbe.indexrepository.ContractIndexRepository; If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: jakarta.persistence.Entity, jakarta.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository
+2024-05-04T14:54:35.627+02:00  INFO 15303 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 1 JPA repository interface.
+2024-05-04T14:54:36.045+02:00  INFO 15303 --- [udd-be] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-05-04T14:54:36.054+02:00  INFO 15303 --- [udd-be] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-04T14:54:36.054+02:00  INFO 15303 --- [udd-be] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-04T14:54:36.089+02:00  INFO 15303 --- [udd-be] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-04T14:54:36.089+02:00  INFO 15303 --- [udd-be] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1042 ms
+2024-05-04T14:54:36.216+02:00  INFO 15303 --- [udd-be] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-04T14:54:36.270+02:00  INFO 15303 --- [udd-be] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-04T14:54:36.302+02:00  INFO 15303 --- [udd-be] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-04T14:54:36.492+02:00  INFO 15303 --- [udd-be] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-04T14:54:36.514+02:00  INFO 15303 --- [udd-be] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-04T14:54:36.707+02:00  INFO 15303 --- [udd-be] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6e364f1f
+2024-05-04T14:54:36.709+02:00  INFO 15303 --- [udd-be] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-04T14:54:36.736+02:00  WARN 15303 --- [udd-be] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-04T14:54:37.345+02:00  INFO 15303 --- [udd-be] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-04T14:54:37.388+02:00  INFO 15303 --- [udd-be] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-04T14:54:38.564+02:00  WARN 15303 --- [udd-be] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: e2a70f8d-acb0-49b2-a997-0d78e368a66b
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-05-04T14:54:38.864+02:00  INFO 15303 --- [udd-be] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5bb24266, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@63437af4, org.springframework.security.web.context.SecurityContextHolderFilter@7843b65e, org.springframework.security.web.header.HeaderWriterFilter@33602729, org.springframework.web.filter.CorsFilter@33f059ad, org.springframework.security.web.authentication.logout.LogoutFilter@71ae1cb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@15b882a0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6ade4ac6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6c7bc8ac, org.springframework.security.web.session.SessionManagementFilter@2f6ede9, org.springframework.security.web.access.ExceptionTranslationFilter@2aacf54b, org.springframework.security.web.access.intercept.AuthorizationFilter@541d8a9e]
+2024-05-04T14:54:39.064+02:00  INFO 15303 --- [udd-be] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-05-04T14:54:39.071+02:00  INFO 15303 --- [udd-be] [main] uddbe.DemoApplication                    : Started DemoApplication in 4.396 seconds (process running for 4.893)
+2024-05-04T14:54:46.020+02:00  INFO 15303 --- [udd-be] [http-nio-0.0.0.0-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-04T14:54:46.020+02:00  INFO 15303 --- [udd-be] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-04T14:54:46.021+02:00  INFO 15303 --- [udd-be] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-05-04T14:55:19.439+02:00  INFO 15303 --- [udd-be] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-04T14:55:19.444+02:00  INFO 15303 --- [udd-be] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-04T14:55:19.449+02:00  INFO 15303 --- [udd-be] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-04T14:55:22.472+02:00  INFO 15723 --- [udd-be] [main] uddbe.DemoApplication                    : Starting DemoApplication using Java 19.0.2 with PID 15723 (/mnt/ACA058A9A0587C30/Faks/Master/Sandra/udd/projekat/udd/udd-be/target/classes started by pavle in /mnt/ACA058A9A0587C30/Faks/Master/Sandra/udd/projekat/udd/udd-be)
+2024-05-04T14:55:22.474+02:00  INFO 15723 --- [udd-be] [main] uddbe.DemoApplication                    : No active profile set, falling back to 1 default profile: "default"
+2024-05-04T14:55:22.877+02:00  INFO 15723 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T14:55:22.878+02:00  INFO 15723 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2024-05-04T14:55:22.885+02:00  INFO 15723 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 Elasticsearch repository interfaces.
+2024-05-04T14:55:23.014+02:00  INFO 15723 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T14:55:23.014+02:00  INFO 15723 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2024-05-04T14:55:23.040+02:00  INFO 15723 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data Elasticsearch - Could not safely identify store assignment for repository candidate interface uddbe.respository.ContractRepository; If you want this repository to be a Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ElasticsearchRepository, org.springframework.data.elasticsearch.repository.ElasticsearchRepository
+2024-05-04T14:55:23.053+02:00  INFO 15723 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 1 Elasticsearch repository interface.
+2024-05-04T14:55:23.058+02:00  INFO 15723 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T14:55:23.059+02:00  INFO 15723 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2024-05-04T14:55:23.073+02:00  INFO 15723 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data Reactive Elasticsearch - Could not safely identify store assignment for repository candidate interface uddbe.respository.ContractRepository; If you want this repository to be a Reactive Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ReactiveElasticsearchRepository
+2024-05-04T14:55:23.074+02:00  INFO 15723 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2024-05-04T14:55:23.085+02:00  INFO 15723 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T14:55:23.086+02:00  INFO 15723 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-04T14:55:23.098+02:00  INFO 15723 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface uddbe.indexrepository.ContractIndexRepository; If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: jakarta.persistence.Entity, jakarta.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository
+2024-05-04T14:55:23.105+02:00  INFO 15723 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 1 JPA repository interface.
+2024-05-04T14:55:23.570+02:00  INFO 15723 --- [udd-be] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-05-04T14:55:23.580+02:00  INFO 15723 --- [udd-be] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-04T14:55:23.580+02:00  INFO 15723 --- [udd-be] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-04T14:55:23.618+02:00  INFO 15723 --- [udd-be] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-04T14:55:23.618+02:00  INFO 15723 --- [udd-be] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1110 ms
+2024-05-04T14:55:23.740+02:00  INFO 15723 --- [udd-be] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-04T14:55:23.798+02:00  INFO 15723 --- [udd-be] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-04T14:55:23.831+02:00  INFO 15723 --- [udd-be] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-04T14:55:24.061+02:00  INFO 15723 --- [udd-be] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-04T14:55:24.085+02:00  INFO 15723 --- [udd-be] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-04T14:55:24.297+02:00  INFO 15723 --- [udd-be] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4a122e68
+2024-05-04T14:55:24.299+02:00  INFO 15723 --- [udd-be] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-04T14:55:24.327+02:00  WARN 15723 --- [udd-be] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-04T14:55:24.981+02:00  INFO 15723 --- [udd-be] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-04T14:55:25.025+02:00  INFO 15723 --- [udd-be] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-04T14:55:26.202+02:00  WARN 15723 --- [udd-be] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 03f52ddd-273c-483a-9f73-b27847b5b084
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-05-04T14:55:26.362+02:00  INFO 15723 --- [udd-be] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@206a465f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@c509742, org.springframework.security.web.context.SecurityContextHolderFilter@33490054, org.springframework.security.web.header.HeaderWriterFilter@7c07deff, org.springframework.web.filter.CorsFilter@77a6aa9f, org.springframework.security.web.authentication.logout.LogoutFilter@3502b614, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@51bd10f0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@47d7e8b5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7d41aefd, org.springframework.security.web.session.SessionManagementFilter@6f28a07e, org.springframework.security.web.access.ExceptionTranslationFilter@12922d53, org.springframework.security.web.access.intercept.AuthorizationFilter@4ecc4b43]
+2024-05-04T14:55:26.561+02:00  INFO 15723 --- [udd-be] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-05-04T14:55:26.567+02:00  INFO 15723 --- [udd-be] [main] uddbe.DemoApplication                    : Started DemoApplication in 4.418 seconds (process running for 5.659)
+2024-05-04T14:55:44.359+02:00  INFO 15723 --- [udd-be] [http-nio-0.0.0.0-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-04T14:55:44.360+02:00  INFO 15723 --- [udd-be] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-04T14:55:44.361+02:00  INFO 15723 --- [udd-be] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-05-04T14:56:41.480+02:00  WARN 15723 --- [udd-be] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=46s769ms429µs441ns).
+2024-05-04T14:59:42.116+02:00  WARN 15723 --- [udd-be] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m635ms643µs709ns).
+2024-05-04T15:01:14.693+02:00  WARN 15723 --- [udd-be] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m32s577ms344µs453ns).
+2024-05-04T15:01:31.197+02:00  INFO 15723 --- [udd-be] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-04T15:01:31.199+02:00  INFO 15723 --- [udd-be] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-04T15:01:31.204+02:00  INFO 15723 --- [udd-be] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-04T15:01:33.541+02:00  INFO 17750 --- [udd-be] [main] uddbe.DemoApplication                    : Starting DemoApplication using Java 19.0.2 with PID 17750 (/mnt/ACA058A9A0587C30/Faks/Master/Sandra/udd/projekat/udd/udd-be/target/classes started by pavle in /mnt/ACA058A9A0587C30/Faks/Master/Sandra/udd/projekat/udd/udd-be)
+2024-05-04T15:01:33.543+02:00  INFO 17750 --- [udd-be] [main] uddbe.DemoApplication                    : No active profile set, falling back to 1 default profile: "default"
+2024-05-04T15:01:33.926+02:00  INFO 17750 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T15:01:33.927+02:00  INFO 17750 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2024-05-04T15:01:33.933+02:00  INFO 17750 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 Elasticsearch repository interfaces.
+2024-05-04T15:01:34.043+02:00  INFO 17750 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T15:01:34.044+02:00  INFO 17750 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2024-05-04T15:01:34.067+02:00  INFO 17750 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data Elasticsearch - Could not safely identify store assignment for repository candidate interface uddbe.respository.ContractRepository; If you want this repository to be a Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ElasticsearchRepository, org.springframework.data.elasticsearch.repository.ElasticsearchRepository
+2024-05-04T15:01:34.079+02:00  INFO 17750 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 1 Elasticsearch repository interface.
+2024-05-04T15:01:34.082+02:00  INFO 17750 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T15:01:34.083+02:00  INFO 17750 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2024-05-04T15:01:34.089+02:00  INFO 17750 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data Reactive Elasticsearch - Could not safely identify store assignment for repository candidate interface uddbe.respository.ContractRepository; If you want this repository to be a Reactive Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ReactiveElasticsearchRepository
+2024-05-04T15:01:34.089+02:00  INFO 17750 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2024-05-04T15:01:34.096+02:00  INFO 17750 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T15:01:34.096+02:00  INFO 17750 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-04T15:01:34.104+02:00  INFO 17750 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface uddbe.indexrepository.ContractIndexRepository; If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: jakarta.persistence.Entity, jakarta.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository
+2024-05-04T15:01:34.109+02:00  INFO 17750 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 1 JPA repository interface.
+2024-05-04T15:01:34.475+02:00  INFO 17750 --- [udd-be] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-05-04T15:01:34.483+02:00  INFO 17750 --- [udd-be] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-04T15:01:34.483+02:00  INFO 17750 --- [udd-be] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-04T15:01:34.517+02:00  INFO 17750 --- [udd-be] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-04T15:01:34.517+02:00  INFO 17750 --- [udd-be] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 942 ms
+2024-05-04T15:01:34.619+02:00  INFO 17750 --- [udd-be] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-04T15:01:34.666+02:00  INFO 17750 --- [udd-be] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-04T15:01:34.693+02:00  INFO 17750 --- [udd-be] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-04T15:01:34.878+02:00  INFO 17750 --- [udd-be] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-04T15:01:34.898+02:00  INFO 17750 --- [udd-be] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-04T15:01:35.089+02:00  INFO 17750 --- [udd-be] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@343db2f6
+2024-05-04T15:01:35.091+02:00  INFO 17750 --- [udd-be] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-04T15:01:35.121+02:00  WARN 17750 --- [udd-be] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-04T15:01:35.661+02:00  INFO 17750 --- [udd-be] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-04T15:01:35.701+02:00  INFO 17750 --- [udd-be] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-04T15:01:36.671+02:00  WARN 17750 --- [udd-be] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 4ce3b2b0-d62b-4fd6-a235-c38acbd518c7
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-05-04T15:01:36.796+02:00  INFO 17750 --- [udd-be] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@52e44f71, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2e1b1d22, org.springframework.security.web.context.SecurityContextHolderFilter@47a72c32, org.springframework.security.web.header.HeaderWriterFilter@124b8fe9, org.springframework.web.filter.CorsFilter@653c0c9c, org.springframework.security.web.authentication.logout.LogoutFilter@541c76fd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4700064f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@11703cc8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5276330a, org.springframework.security.web.session.SessionManagementFilter@6a77953c, org.springframework.security.web.access.ExceptionTranslationFilter@30e734a1, org.springframework.security.web.access.intercept.AuthorizationFilter@37596b44]
+2024-05-04T15:01:36.955+02:00  INFO 17750 --- [udd-be] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-05-04T15:01:36.961+02:00  INFO 17750 --- [udd-be] [main] uddbe.DemoApplication                    : Started DemoApplication in 3.843 seconds (process running for 4.43)
+2024-05-04T15:01:48.819+02:00  INFO 17750 --- [udd-be] [http-nio-0.0.0.0-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-04T15:01:48.819+02:00  INFO 17750 --- [udd-be] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-04T15:01:48.820+02:00  INFO 17750 --- [udd-be] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-05-04T15:02:31.563+02:00  INFO 17750 --- [udd-be] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-04T15:02:31.566+02:00  INFO 17750 --- [udd-be] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-04T15:02:31.572+02:00  INFO 17750 --- [udd-be] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-04T15:02:35.110+02:00  INFO 18136 --- [udd-be] [main] uddbe.DemoApplication                    : Starting DemoApplication using Java 19.0.2 with PID 18136 (/mnt/ACA058A9A0587C30/Faks/Master/Sandra/udd/projekat/udd/udd-be/target/classes started by pavle in /mnt/ACA058A9A0587C30/Faks/Master/Sandra/udd/projekat/udd/udd-be)
+2024-05-04T15:02:35.112+02:00  INFO 18136 --- [udd-be] [main] uddbe.DemoApplication                    : No active profile set, falling back to 1 default profile: "default"
+2024-05-04T15:02:35.442+02:00  INFO 18136 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T15:02:35.443+02:00  INFO 18136 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2024-05-04T15:02:35.451+02:00  INFO 18136 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 Elasticsearch repository interfaces.
+2024-05-04T15:02:35.580+02:00  INFO 18136 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T15:02:35.580+02:00  INFO 18136 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2024-05-04T15:02:35.601+02:00  INFO 18136 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data Elasticsearch - Could not safely identify store assignment for repository candidate interface uddbe.respository.ContractRepository; If you want this repository to be a Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ElasticsearchRepository, org.springframework.data.elasticsearch.repository.ElasticsearchRepository
+2024-05-04T15:02:35.612+02:00  INFO 18136 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 1 Elasticsearch repository interface.
+2024-05-04T15:02:35.615+02:00  INFO 18136 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T15:02:35.616+02:00  INFO 18136 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2024-05-04T15:02:35.622+02:00  INFO 18136 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data Reactive Elasticsearch - Could not safely identify store assignment for repository candidate interface uddbe.respository.ContractRepository; If you want this repository to be a Reactive Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ReactiveElasticsearchRepository
+2024-05-04T15:02:35.622+02:00  INFO 18136 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2024-05-04T15:02:35.628+02:00  INFO 18136 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T15:02:35.629+02:00  INFO 18136 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-04T15:02:35.636+02:00  INFO 18136 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface uddbe.indexrepository.ContractIndexRepository; If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: jakarta.persistence.Entity, jakarta.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository
+2024-05-04T15:02:35.640+02:00  INFO 18136 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 1 JPA repository interface.
+2024-05-04T15:02:35.990+02:00  INFO 18136 --- [udd-be] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-05-04T15:02:35.998+02:00  INFO 18136 --- [udd-be] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-04T15:02:35.998+02:00  INFO 18136 --- [udd-be] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-04T15:02:36.030+02:00  INFO 18136 --- [udd-be] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-04T15:02:36.031+02:00  INFO 18136 --- [udd-be] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 889 ms
+2024-05-04T15:02:36.132+02:00  INFO 18136 --- [udd-be] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-04T15:02:36.180+02:00  INFO 18136 --- [udd-be] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-04T15:02:36.216+02:00  INFO 18136 --- [udd-be] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-04T15:02:36.397+02:00  INFO 18136 --- [udd-be] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-04T15:02:36.417+02:00  INFO 18136 --- [udd-be] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-04T15:02:36.604+02:00  INFO 18136 --- [udd-be] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2c815fdc
+2024-05-04T15:02:36.605+02:00  INFO 18136 --- [udd-be] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-04T15:02:36.634+02:00  WARN 18136 --- [udd-be] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-04T15:02:37.195+02:00  INFO 18136 --- [udd-be] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-04T15:02:37.235+02:00  INFO 18136 --- [udd-be] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-04T15:02:38.205+02:00  WARN 18136 --- [udd-be] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 3c68c8bb-382e-458b-b792-d1d703854328
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-05-04T15:02:38.326+02:00  INFO 18136 --- [udd-be] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@541d8a9e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@51c0346d, org.springframework.security.web.context.SecurityContextHolderFilter@2f6ede9, org.springframework.security.web.header.HeaderWriterFilter@672c4e24, org.springframework.web.filter.CorsFilter@32cda33c, org.springframework.security.web.authentication.logout.LogoutFilter@76fdd5f1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@55854382, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7843b65e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5bb24266, org.springframework.security.web.session.SessionManagementFilter@4700064f, org.springframework.security.web.access.ExceptionTranslationFilter@360ccb68, org.springframework.security.web.access.intercept.AuthorizationFilter@653c0c9c]
+2024-05-04T15:02:38.488+02:00  INFO 18136 --- [udd-be] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-05-04T15:02:38.494+02:00  INFO 18136 --- [udd-be] [main] uddbe.DemoApplication                    : Started DemoApplication in 3.681 seconds (process running for 4.094)
+2024-05-04T15:03:42.465+02:00  INFO 18136 --- [udd-be] [http-nio-0.0.0.0-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-04T15:03:42.465+02:00  INFO 18136 --- [udd-be] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-04T15:03:42.466+02:00  INFO 18136 --- [udd-be] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-05-04T16:16:16.869+02:00  INFO 18136 --- [udd-be] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-04T16:16:16.881+02:00  INFO 18136 --- [udd-be] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-04T16:16:16.886+02:00  INFO 18136 --- [udd-be] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-04T16:16:20.611+02:00  INFO 35947 --- [udd-be] [main] uddbe.DemoApplication                    : Starting DemoApplication using Java 19.0.2 with PID 35947 (/mnt/ACA058A9A0587C30/Faks/Master/Sandra/udd/projekat/udd/udd-be/target/classes started by pavle in /mnt/ACA058A9A0587C30/Faks/Master/Sandra/udd/projekat/udd/udd-be)
+2024-05-04T16:16:20.614+02:00  INFO 35947 --- [udd-be] [main] uddbe.DemoApplication                    : No active profile set, falling back to 1 default profile: "default"
+2024-05-04T16:16:21.035+02:00  INFO 35947 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T16:16:21.036+02:00  INFO 35947 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2024-05-04T16:16:21.043+02:00  INFO 35947 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 Elasticsearch repository interfaces.
+2024-05-04T16:16:21.174+02:00  INFO 35947 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T16:16:21.174+02:00  INFO 35947 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2024-05-04T16:16:21.205+02:00  INFO 35947 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data Elasticsearch - Could not safely identify store assignment for repository candidate interface uddbe.respository.ContractRepository; If you want this repository to be a Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ElasticsearchRepository, org.springframework.data.elasticsearch.repository.ElasticsearchRepository
+2024-05-04T16:16:21.219+02:00  INFO 35947 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 44 ms. Found 1 Elasticsearch repository interface.
+2024-05-04T16:16:21.223+02:00  INFO 35947 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T16:16:21.223+02:00  INFO 35947 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2024-05-04T16:16:21.230+02:00  INFO 35947 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data Reactive Elasticsearch - Could not safely identify store assignment for repository candidate interface uddbe.respository.ContractRepository; If you want this repository to be a Reactive Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ReactiveElasticsearchRepository
+2024-05-04T16:16:21.230+02:00  INFO 35947 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2024-05-04T16:16:21.238+02:00  INFO 35947 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T16:16:21.239+02:00  INFO 35947 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-04T16:16:21.251+02:00  INFO 35947 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface uddbe.indexrepository.ContractIndexRepository; If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: jakarta.persistence.Entity, jakarta.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository
+2024-05-04T16:16:21.260+02:00  INFO 35947 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 1 JPA repository interface.
+2024-05-04T16:16:21.688+02:00  INFO 35947 --- [udd-be] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-05-04T16:16:21.697+02:00  INFO 35947 --- [udd-be] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-04T16:16:21.697+02:00  INFO 35947 --- [udd-be] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-04T16:16:21.739+02:00  INFO 35947 --- [udd-be] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-04T16:16:21.739+02:00  INFO 35947 --- [udd-be] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1088 ms
+2024-05-04T16:16:21.849+02:00  INFO 35947 --- [udd-be] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-04T16:16:21.902+02:00  INFO 35947 --- [udd-be] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-04T16:16:21.932+02:00  INFO 35947 --- [udd-be] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-04T16:16:22.128+02:00  INFO 35947 --- [udd-be] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-04T16:16:22.150+02:00  INFO 35947 --- [udd-be] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-04T16:16:22.357+02:00  INFO 35947 --- [udd-be] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@28fa541
+2024-05-04T16:16:22.359+02:00  INFO 35947 --- [udd-be] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-04T16:16:22.387+02:00  WARN 35947 --- [udd-be] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-04T16:16:22.984+02:00  INFO 35947 --- [udd-be] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-04T16:16:23.032+02:00  INFO 35947 --- [udd-be] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-04T16:16:24.072+02:00  WARN 35947 --- [udd-be] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 87759054-428d-4c0c-9c2e-b3892486258a
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-05-04T16:16:24.209+02:00  INFO 35947 --- [udd-be] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2e674698, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@270a3cef, org.springframework.security.web.context.SecurityContextHolderFilter@2f154d9b, org.springframework.security.web.header.HeaderWriterFilter@2c40e456, org.springframework.web.filter.CorsFilter@6d224921, org.springframework.security.web.authentication.logout.LogoutFilter@179cdf4f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@19993ed, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7479cdf7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6f7e5e11, org.springframework.security.web.session.SessionManagementFilter@5f1eff72, org.springframework.security.web.access.ExceptionTranslationFilter@78e386a5, org.springframework.security.web.access.intercept.AuthorizationFilter@45398bb0]
+2024-05-04T16:16:24.390+02:00  INFO 35947 --- [udd-be] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-05-04T16:16:24.397+02:00  INFO 35947 --- [udd-be] [main] uddbe.DemoApplication                    : Started DemoApplication in 4.105 seconds (process running for 4.663)
+2024-05-04T16:17:17.934+02:00  INFO 35947 --- [udd-be] [http-nio-0.0.0.0-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-04T16:17:17.934+02:00  INFO 35947 --- [udd-be] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-04T16:17:17.935+02:00  INFO 35947 --- [udd-be] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-05-04T16:18:33.387+02:00  WARN 35947 --- [udd-be] [http-nio-0.0.0.0-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.context.request.async.AsyncRequestNotUsableException: ServletOutputStream failed to flush: java.nio.channels.ClosedChannelException]
+2024-05-04T16:18:33.392+02:00  INFO 35947 --- [udd-be] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-04T16:18:33.395+02:00  INFO 35947 --- [udd-be] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-04T16:18:33.400+02:00  INFO 35947 --- [udd-be] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-04T16:18:35.557+02:00  INFO 36583 --- [udd-be] [main] uddbe.DemoApplication                    : Starting DemoApplication using Java 19.0.2 with PID 36583 (/mnt/ACA058A9A0587C30/Faks/Master/Sandra/udd/projekat/udd/udd-be/target/classes started by pavle in /mnt/ACA058A9A0587C30/Faks/Master/Sandra/udd/projekat/udd/udd-be)
+2024-05-04T16:18:35.559+02:00  INFO 36583 --- [udd-be] [main] uddbe.DemoApplication                    : No active profile set, falling back to 1 default profile: "default"
+2024-05-04T16:18:35.872+02:00  INFO 36583 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T16:18:35.873+02:00  INFO 36583 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2024-05-04T16:18:35.878+02:00  INFO 36583 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 Elasticsearch repository interfaces.
+2024-05-04T16:18:35.973+02:00  INFO 36583 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T16:18:35.973+02:00  INFO 36583 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2024-05-04T16:18:36.001+02:00  INFO 36583 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data Elasticsearch - Could not safely identify store assignment for repository candidate interface uddbe.respository.ContractRepository; If you want this repository to be a Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ElasticsearchRepository, org.springframework.data.elasticsearch.repository.ElasticsearchRepository
+2024-05-04T16:18:36.017+02:00  INFO 36583 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43 ms. Found 1 Elasticsearch repository interface.
+2024-05-04T16:18:36.023+02:00  INFO 36583 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T16:18:36.024+02:00  INFO 36583 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2024-05-04T16:18:36.031+02:00  INFO 36583 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data Reactive Elasticsearch - Could not safely identify store assignment for repository candidate interface uddbe.respository.ContractRepository; If you want this repository to be a Reactive Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ReactiveElasticsearchRepository
+2024-05-04T16:18:36.032+02:00  INFO 36583 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2024-05-04T16:18:36.041+02:00  INFO 36583 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T16:18:36.042+02:00  INFO 36583 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-04T16:18:36.049+02:00  INFO 36583 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface uddbe.indexrepository.ContractIndexRepository; If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: jakarta.persistence.Entity, jakarta.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository
+2024-05-04T16:18:36.054+02:00  INFO 36583 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 1 JPA repository interface.
+2024-05-04T16:18:36.396+02:00  INFO 36583 --- [udd-be] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-05-04T16:18:36.404+02:00  INFO 36583 --- [udd-be] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-04T16:18:36.404+02:00  INFO 36583 --- [udd-be] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-04T16:18:36.442+02:00  INFO 36583 --- [udd-be] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-04T16:18:36.443+02:00  INFO 36583 --- [udd-be] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 851 ms
+2024-05-04T16:18:36.529+02:00  INFO 36583 --- [udd-be] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-04T16:18:36.560+02:00  INFO 36583 --- [udd-be] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-04T16:18:36.579+02:00  INFO 36583 --- [udd-be] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-04T16:18:36.722+02:00  INFO 36583 --- [udd-be] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-04T16:18:36.737+02:00  INFO 36583 --- [udd-be] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-04T16:18:36.890+02:00  INFO 36583 --- [udd-be] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@dae5e0
+2024-05-04T16:18:36.892+02:00  INFO 36583 --- [udd-be] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-04T16:18:36.913+02:00  WARN 36583 --- [udd-be] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-04T16:18:37.412+02:00  INFO 36583 --- [udd-be] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-04T16:18:37.454+02:00  INFO 36583 --- [udd-be] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-04T16:18:38.509+02:00  WARN 36583 --- [udd-be] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: d6d26fe9-e506-4f45-8bd3-bdddc2dac9be
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-05-04T16:18:38.662+02:00  INFO 36583 --- [udd-be] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5bb24266, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@63437af4, org.springframework.security.web.context.SecurityContextHolderFilter@7843b65e, org.springframework.security.web.header.HeaderWriterFilter@33602729, org.springframework.web.filter.CorsFilter@33f059ad, org.springframework.security.web.authentication.logout.LogoutFilter@71ae1cb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@15b882a0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6ade4ac6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6c7bc8ac, org.springframework.security.web.session.SessionManagementFilter@2f6ede9, org.springframework.security.web.access.ExceptionTranslationFilter@2aacf54b, org.springframework.security.web.access.intercept.AuthorizationFilter@541d8a9e]
+2024-05-04T16:18:38.874+02:00  INFO 36583 --- [udd-be] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-05-04T16:18:38.879+02:00  INFO 36583 --- [udd-be] [main] uddbe.DemoApplication                    : Started DemoApplication in 3.636 seconds (process running for 4.19)
+2024-05-04T16:20:46.362+02:00  INFO 36583 --- [udd-be] [http-nio-0.0.0.0-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-04T16:20:46.363+02:00  INFO 36583 --- [udd-be] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-04T16:20:46.364+02:00  INFO 36583 --- [udd-be] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-05-04T16:21:32.607+02:00  INFO 36583 --- [udd-be] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-04T16:21:32.610+02:00  INFO 36583 --- [udd-be] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-04T16:21:32.614+02:00  INFO 36583 --- [udd-be] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-04T16:21:35.008+02:00  INFO 37773 --- [udd-be] [main] uddbe.DemoApplication                    : Starting DemoApplication using Java 19.0.2 with PID 37773 (/mnt/ACA058A9A0587C30/Faks/Master/Sandra/udd/projekat/udd/udd-be/target/classes started by pavle in /mnt/ACA058A9A0587C30/Faks/Master/Sandra/udd/projekat/udd/udd-be)
+2024-05-04T16:21:35.010+02:00  INFO 37773 --- [udd-be] [main] uddbe.DemoApplication                    : No active profile set, falling back to 1 default profile: "default"
+2024-05-04T16:21:35.417+02:00  INFO 37773 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T16:21:35.418+02:00  INFO 37773 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2024-05-04T16:21:35.425+02:00  INFO 37773 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 Elasticsearch repository interfaces.
+2024-05-04T16:21:35.540+02:00  INFO 37773 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T16:21:35.540+02:00  INFO 37773 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2024-05-04T16:21:35.565+02:00  INFO 37773 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data Elasticsearch - Could not safely identify store assignment for repository candidate interface uddbe.respository.ContractRepository; If you want this repository to be a Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ElasticsearchRepository, org.springframework.data.elasticsearch.repository.ElasticsearchRepository
+2024-05-04T16:21:35.577+02:00  INFO 37773 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 1 Elasticsearch repository interface.
+2024-05-04T16:21:35.581+02:00  INFO 37773 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T16:21:35.581+02:00  INFO 37773 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2024-05-04T16:21:35.587+02:00  INFO 37773 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data Reactive Elasticsearch - Could not safely identify store assignment for repository candidate interface uddbe.respository.ContractRepository; If you want this repository to be a Reactive Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ReactiveElasticsearchRepository
+2024-05-04T16:21:35.587+02:00  INFO 37773 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2024-05-04T16:21:35.594+02:00  INFO 37773 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T16:21:35.595+02:00  INFO 37773 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-04T16:21:35.603+02:00  INFO 37773 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface uddbe.indexrepository.ContractIndexRepository; If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: jakarta.persistence.Entity, jakarta.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository
+2024-05-04T16:21:35.609+02:00  INFO 37773 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 1 JPA repository interface.
+2024-05-04T16:21:35.999+02:00  INFO 37773 --- [udd-be] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-05-04T16:21:36.008+02:00  INFO 37773 --- [udd-be] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-04T16:21:36.008+02:00  INFO 37773 --- [udd-be] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-04T16:21:36.041+02:00  INFO 37773 --- [udd-be] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-04T16:21:36.041+02:00  INFO 37773 --- [udd-be] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 998 ms
+2024-05-04T16:21:36.150+02:00  INFO 37773 --- [udd-be] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-04T16:21:36.214+02:00  INFO 37773 --- [udd-be] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-04T16:21:36.247+02:00  INFO 37773 --- [udd-be] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-04T16:21:36.450+02:00  INFO 37773 --- [udd-be] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-04T16:21:36.481+02:00  INFO 37773 --- [udd-be] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-04T16:21:36.695+02:00  INFO 37773 --- [udd-be] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5a82bc58
+2024-05-04T16:21:36.696+02:00  INFO 37773 --- [udd-be] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-04T16:21:36.723+02:00  WARN 37773 --- [udd-be] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-04T16:21:37.310+02:00  INFO 37773 --- [udd-be] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-04T16:21:37.349+02:00  INFO 37773 --- [udd-be] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-04T16:21:38.391+02:00  WARN 37773 --- [udd-be] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 821264af-9dc6-41aa-8d21-3bdbd7af797b
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-05-04T16:21:38.522+02:00  INFO 37773 --- [udd-be] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@60fc4450, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2e674698, org.springframework.security.web.context.SecurityContextHolderFilter@234adbe2, org.springframework.security.web.header.HeaderWriterFilter@6138ee0e, org.springframework.web.filter.CorsFilter@270a3cef, org.springframework.security.web.authentication.logout.LogoutFilter@27aa0720, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7d8c264, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@19993ed, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6d224921, org.springframework.security.web.session.SessionManagementFilter@661d49d1, org.springframework.security.web.access.ExceptionTranslationFilter@35c69e6b, org.springframework.security.web.access.intercept.AuthorizationFilter@7893b8c]
+2024-05-04T16:21:38.728+02:00  INFO 37773 --- [udd-be] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-05-04T16:21:38.734+02:00  INFO 37773 --- [udd-be] [main] uddbe.DemoApplication                    : Started DemoApplication in 4.04 seconds (process running for 4.78)
+2024-05-04T16:21:44.959+02:00  INFO 37773 --- [udd-be] [http-nio-0.0.0.0-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-04T16:21:44.959+02:00  INFO 37773 --- [udd-be] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-04T16:21:44.960+02:00  INFO 37773 --- [udd-be] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-05-04T16:22:58.162+02:00  WARN 37773 --- [udd-be] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m21s365ms798µs833ns).
+2024-05-04T16:23:11.255+02:00  INFO 37773 --- [udd-be] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-04T16:23:11.258+02:00  INFO 37773 --- [udd-be] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-04T16:23:11.262+02:00  INFO 37773 --- [udd-be] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-04T16:23:13.206+02:00  INFO 38300 --- [udd-be] [main] uddbe.DemoApplication                    : Starting DemoApplication using Java 19.0.2 with PID 38300 (/mnt/ACA058A9A0587C30/Faks/Master/Sandra/udd/projekat/udd/udd-be/target/classes started by pavle in /mnt/ACA058A9A0587C30/Faks/Master/Sandra/udd/projekat/udd/udd-be)
+2024-05-04T16:23:13.207+02:00  INFO 38300 --- [udd-be] [main] uddbe.DemoApplication                    : No active profile set, falling back to 1 default profile: "default"
+2024-05-04T16:23:13.492+02:00  INFO 38300 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T16:23:13.492+02:00  INFO 38300 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2024-05-04T16:23:13.498+02:00  INFO 38300 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 Elasticsearch repository interfaces.
+2024-05-04T16:23:13.617+02:00  INFO 38300 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T16:23:13.617+02:00  INFO 38300 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2024-05-04T16:23:13.638+02:00  INFO 38300 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data Elasticsearch - Could not safely identify store assignment for repository candidate interface uddbe.respository.ContractRepository; If you want this repository to be a Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ElasticsearchRepository, org.springframework.data.elasticsearch.repository.ElasticsearchRepository
+2024-05-04T16:23:13.648+02:00  INFO 38300 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 1 Elasticsearch repository interface.
+2024-05-04T16:23:13.652+02:00  INFO 38300 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T16:23:13.653+02:00  INFO 38300 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2024-05-04T16:23:13.659+02:00  INFO 38300 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data Reactive Elasticsearch - Could not safely identify store assignment for repository candidate interface uddbe.respository.ContractRepository; If you want this repository to be a Reactive Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ReactiveElasticsearchRepository
+2024-05-04T16:23:13.659+02:00  INFO 38300 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2024-05-04T16:23:13.664+02:00  INFO 38300 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T16:23:13.665+02:00  INFO 38300 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-04T16:23:13.671+02:00  INFO 38300 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface uddbe.indexrepository.ContractIndexRepository; If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: jakarta.persistence.Entity, jakarta.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository
+2024-05-04T16:23:13.676+02:00  INFO 38300 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 1 JPA repository interface.
+2024-05-04T16:23:13.997+02:00  INFO 38300 --- [udd-be] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-05-04T16:23:14.005+02:00  INFO 38300 --- [udd-be] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-04T16:23:14.006+02:00  INFO 38300 --- [udd-be] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-04T16:23:14.035+02:00  INFO 38300 --- [udd-be] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-04T16:23:14.036+02:00  INFO 38300 --- [udd-be] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 803 ms
+2024-05-04T16:23:14.124+02:00  INFO 38300 --- [udd-be] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-04T16:23:14.156+02:00  INFO 38300 --- [udd-be] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-04T16:23:14.176+02:00  INFO 38300 --- [udd-be] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-04T16:23:14.323+02:00  INFO 38300 --- [udd-be] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-04T16:23:14.340+02:00  INFO 38300 --- [udd-be] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-04T16:23:14.481+02:00  INFO 38300 --- [udd-be] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@343db2f6
+2024-05-04T16:23:14.483+02:00  INFO 38300 --- [udd-be] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-04T16:23:14.502+02:00  WARN 38300 --- [udd-be] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-04T16:23:15.006+02:00  INFO 38300 --- [udd-be] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-04T16:23:15.051+02:00  INFO 38300 --- [udd-be] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-04T16:23:15.916+02:00  WARN 38300 --- [udd-be] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 0b309d51-b967-4aa7-b8d5-562067171bf0
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-05-04T16:23:16.025+02:00  INFO 38300 --- [udd-be] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@541d8a9e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@51c0346d, org.springframework.security.web.context.SecurityContextHolderFilter@2f6ede9, org.springframework.security.web.header.HeaderWriterFilter@672c4e24, org.springframework.web.filter.CorsFilter@32cda33c, org.springframework.security.web.authentication.logout.LogoutFilter@76fdd5f1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@55854382, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7843b65e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5bb24266, org.springframework.security.web.session.SessionManagementFilter@4700064f, org.springframework.security.web.access.ExceptionTranslationFilter@360ccb68, org.springframework.security.web.access.intercept.AuthorizationFilter@653c0c9c]
+2024-05-04T16:23:16.209+02:00  INFO 38300 --- [udd-be] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-05-04T16:23:16.214+02:00  INFO 38300 --- [udd-be] [main] uddbe.DemoApplication                    : Started DemoApplication in 3.362 seconds (process running for 3.762)
+2024-05-04T16:23:32.158+02:00  INFO 38300 --- [udd-be] [http-nio-0.0.0.0-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-04T16:23:32.158+02:00  INFO 38300 --- [udd-be] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-04T16:23:32.159+02:00  INFO 38300 --- [udd-be] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-05-04T16:27:02.450+02:00  INFO 38300 --- [udd-be] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-04T16:27:02.453+02:00  INFO 38300 --- [udd-be] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-04T16:27:02.458+02:00  INFO 38300 --- [udd-be] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-04T16:27:04.474+02:00  INFO 39292 --- [udd-be] [main] uddbe.DemoApplication                    : Starting DemoApplication using Java 19.0.2 with PID 39292 (/mnt/ACA058A9A0587C30/Faks/Master/Sandra/udd/projekat/udd/udd-be/target/classes started by pavle in /mnt/ACA058A9A0587C30/Faks/Master/Sandra/udd/projekat/udd/udd-be)
+2024-05-04T16:27:04.476+02:00  INFO 39292 --- [udd-be] [main] uddbe.DemoApplication                    : No active profile set, falling back to 1 default profile: "default"
+2024-05-04T16:27:04.821+02:00  INFO 39292 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T16:27:04.821+02:00  INFO 39292 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2024-05-04T16:27:04.826+02:00  INFO 39292 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 Elasticsearch repository interfaces.
+2024-05-04T16:27:04.925+02:00  INFO 39292 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T16:27:04.926+02:00  INFO 39292 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2024-05-04T16:27:04.948+02:00  INFO 39292 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data Elasticsearch - Could not safely identify store assignment for repository candidate interface uddbe.respository.ContractRepository; If you want this repository to be a Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ElasticsearchRepository, org.springframework.data.elasticsearch.repository.ElasticsearchRepository
+2024-05-04T16:27:04.960+02:00  INFO 39292 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 1 Elasticsearch repository interface.
+2024-05-04T16:27:04.964+02:00  INFO 39292 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T16:27:04.964+02:00  INFO 39292 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2024-05-04T16:27:04.970+02:00  INFO 39292 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data Reactive Elasticsearch - Could not safely identify store assignment for repository candidate interface uddbe.respository.ContractRepository; If you want this repository to be a Reactive Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ReactiveElasticsearchRepository
+2024-05-04T16:27:04.970+02:00  INFO 39292 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2024-05-04T16:27:04.976+02:00  INFO 39292 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T16:27:04.977+02:00  INFO 39292 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-04T16:27:04.983+02:00  INFO 39292 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface uddbe.indexrepository.ContractIndexRepository; If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: jakarta.persistence.Entity, jakarta.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository
+2024-05-04T16:27:04.988+02:00  INFO 39292 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 1 JPA repository interface.
+2024-05-04T16:27:05.325+02:00  INFO 39292 --- [udd-be] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-05-04T16:27:05.333+02:00  INFO 39292 --- [udd-be] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-04T16:27:05.334+02:00  INFO 39292 --- [udd-be] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-04T16:27:05.374+02:00  INFO 39292 --- [udd-be] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-04T16:27:05.375+02:00  INFO 39292 --- [udd-be] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 865 ms
+2024-05-04T16:27:05.474+02:00  INFO 39292 --- [udd-be] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-04T16:27:05.515+02:00  INFO 39292 --- [udd-be] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-04T16:27:05.538+02:00  INFO 39292 --- [udd-be] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-04T16:27:05.690+02:00  INFO 39292 --- [udd-be] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-04T16:27:05.709+02:00  INFO 39292 --- [udd-be] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-04T16:27:05.897+02:00  INFO 39292 --- [udd-be] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4a336377
+2024-05-04T16:27:05.899+02:00  INFO 39292 --- [udd-be] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-04T16:27:05.920+02:00  WARN 39292 --- [udd-be] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-04T16:27:06.547+02:00  INFO 39292 --- [udd-be] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-04T16:27:06.594+02:00  INFO 39292 --- [udd-be] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-04T16:27:07.554+02:00  WARN 39292 --- [udd-be] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 365a9928-0dd3-480e-bab2-7dea16898b67
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-05-04T16:27:07.667+02:00  INFO 39292 --- [udd-be] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2e674698, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@270a3cef, org.springframework.security.web.context.SecurityContextHolderFilter@2f154d9b, org.springframework.security.web.header.HeaderWriterFilter@2c40e456, org.springframework.web.filter.CorsFilter@6d224921, org.springframework.security.web.authentication.logout.LogoutFilter@179cdf4f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@19993ed, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7479cdf7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6f7e5e11, org.springframework.security.web.session.SessionManagementFilter@5f1eff72, org.springframework.security.web.access.ExceptionTranslationFilter@78e386a5, org.springframework.security.web.access.intercept.AuthorizationFilter@45398bb0]
+2024-05-04T16:27:07.846+02:00  INFO 39292 --- [udd-be] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-05-04T16:27:07.853+02:00  INFO 39292 --- [udd-be] [main] uddbe.DemoApplication                    : Started DemoApplication in 3.717 seconds (process running for 4.221)
+2024-05-04T16:27:14.975+02:00  INFO 39292 --- [udd-be] [http-nio-0.0.0.0-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-04T16:27:14.975+02:00  INFO 39292 --- [udd-be] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-04T16:27:14.976+02:00  INFO 39292 --- [udd-be] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-05-04T16:28:10.192+02:00  INFO 39292 --- [udd-be] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-04T16:28:10.195+02:00  INFO 39292 --- [udd-be] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-04T16:28:10.202+02:00  INFO 39292 --- [udd-be] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-04T16:28:29.210+02:00  INFO 39828 --- [udd-be] [main] uddbe.DemoApplication                    : Starting DemoApplication using Java 19.0.2 with PID 39828 (/mnt/ACA058A9A0587C30/Faks/Master/Sandra/udd/projekat/udd/udd-be/target/classes started by pavle in /mnt/ACA058A9A0587C30/Faks/Master/Sandra/udd/projekat/udd/udd-be)
+2024-05-04T16:28:29.211+02:00  INFO 39828 --- [udd-be] [main] uddbe.DemoApplication                    : No active profile set, falling back to 1 default profile: "default"
+2024-05-04T16:28:29.515+02:00  INFO 39828 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T16:28:29.516+02:00  INFO 39828 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2024-05-04T16:28:29.522+02:00  INFO 39828 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 Elasticsearch repository interfaces.
+2024-05-04T16:28:29.639+02:00  INFO 39828 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T16:28:29.639+02:00  INFO 39828 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2024-05-04T16:28:29.660+02:00  INFO 39828 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data Elasticsearch - Could not safely identify store assignment for repository candidate interface uddbe.respository.ContractRepository; If you want this repository to be a Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ElasticsearchRepository, org.springframework.data.elasticsearch.repository.ElasticsearchRepository
+2024-05-04T16:28:29.671+02:00  INFO 39828 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 1 Elasticsearch repository interface.
+2024-05-04T16:28:29.674+02:00  INFO 39828 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T16:28:29.675+02:00  INFO 39828 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2024-05-04T16:28:29.681+02:00  INFO 39828 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data Reactive Elasticsearch - Could not safely identify store assignment for repository candidate interface uddbe.respository.ContractRepository; If you want this repository to be a Reactive Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ReactiveElasticsearchRepository
+2024-05-04T16:28:29.681+02:00  INFO 39828 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2024-05-04T16:28:29.686+02:00  INFO 39828 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-05-04T16:28:29.687+02:00  INFO 39828 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-04T16:28:29.694+02:00  INFO 39828 --- [udd-be] [main] .RepositoryConfigurationExtensionSupport : Spring Data JPA - Could not safely identify store assignment for repository candidate interface uddbe.indexrepository.ContractIndexRepository; If you want this repository to be a JPA repository, consider annotating your entities with one of these annotations: jakarta.persistence.Entity, jakarta.persistence.MappedSuperclass (preferred), or consider extending one of the following types with your repository: org.springframework.data.jpa.repository.JpaRepository
+2024-05-04T16:28:29.700+02:00  INFO 39828 --- [udd-be] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 1 JPA repository interface.
+2024-05-04T16:28:30.061+02:00  INFO 39828 --- [udd-be] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-05-04T16:28:30.069+02:00  INFO 39828 --- [udd-be] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-04T16:28:30.069+02:00  INFO 39828 --- [udd-be] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-04T16:28:30.104+02:00  INFO 39828 --- [udd-be] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-04T16:28:30.104+02:00  INFO 39828 --- [udd-be] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 861 ms
+2024-05-04T16:28:30.195+02:00  INFO 39828 --- [udd-be] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-04T16:28:30.233+02:00  INFO 39828 --- [udd-be] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-04T16:28:30.255+02:00  INFO 39828 --- [udd-be] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-04T16:28:30.406+02:00  INFO 39828 --- [udd-be] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-04T16:28:30.423+02:00  INFO 39828 --- [udd-be] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-04T16:28:30.568+02:00  INFO 39828 --- [udd-be] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@343db2f6
+2024-05-04T16:28:30.569+02:00  INFO 39828 --- [udd-be] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-04T16:28:30.591+02:00  WARN 39828 --- [udd-be] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-04T16:28:31.135+02:00  INFO 39828 --- [udd-be] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-04T16:28:31.184+02:00  INFO 39828 --- [udd-be] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-04T16:28:32.181+02:00  WARN 39828 --- [udd-be] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 70255030-554e-4097-b711-c19a5987f237
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-05-04T16:28:32.283+02:00  INFO 39828 --- [udd-be] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@653c0c9c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5276330a, org.springframework.security.web.context.SecurityContextHolderFilter@4700064f, org.springframework.security.web.header.HeaderWriterFilter@3e9e7a70, org.springframework.web.filter.CorsFilter@221961f2, org.springframework.security.web.authentication.logout.LogoutFilter@3993cecb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6fc84468, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2f6ede9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@541d8a9e, org.springframework.security.web.session.SessionManagementFilter@7a458c73, org.springframework.security.web.access.ExceptionTranslationFilter@124b8fe9, org.springframework.security.web.access.intercept.AuthorizationFilter@42ceb67f]
+2024-05-04T16:28:32.453+02:00  INFO 39828 --- [udd-be] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-05-04T16:28:32.459+02:00  INFO 39828 --- [udd-be] [main] uddbe.DemoApplication                    : Started DemoApplication in 3.513 seconds (process running for 3.885)
+2024-05-04T16:28:37.177+02:00  INFO 39828 --- [udd-be] [http-nio-0.0.0.0-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-04T16:28:37.177+02:00  INFO 39828 --- [udd-be] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-04T16:28:37.178+02:00  INFO 39828 --- [udd-be] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-05-04T16:36:23.264+02:00  INFO 39828 --- [udd-be] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-04T16:36:23.267+02:00  INFO 39828 --- [udd-be] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-04T16:36:23.272+02:00  INFO 39828 --- [udd-be] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
