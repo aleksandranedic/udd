@@ -4,6 +4,9 @@ import co.elastic.clients.elasticsearch._types.FieldValue;
 import co.elastic.clients.elasticsearch._types.query_dsl.BoolQuery;
 import co.elastic.clients.elasticsearch._types.query_dsl.Query;
 import co.elastic.clients.elasticsearch._types.query_dsl.TermsQueryField;
+import org.springframework.data.elasticsearch.core.SearchHit;
+import uddbe.dto.SearchResult;
+import uddbe.dto.SearchResultContent;
 import uddbe.exceptionhandling.exception.MalformedQueryException;
 import uddbe.indexmodel.ContractIndex;
 import uddbe.service.interfaces.SearchService;
@@ -18,21 +21,25 @@ import org.springframework.data.elasticsearch.core.query.highlight.HighlightFiel
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import lombok.RequiredArgsConstructor;
 import org.elasticsearch.common.unit.Fuzziness;
 import org.springframework.data.domain.Page;
 import org.springframework.data.elasticsearch.core.SearchHitSupport;
 import org.springframework.stereotype.Service;
+import uddbe.service.mapper.ContractMapper;
 
 @Service
 @RequiredArgsConstructor
 public class SearchServiceImpl implements SearchService {
 
     private final ElasticsearchOperations elasticsearchTemplate;
+    private final ContractMapper contractMapper;
 
     @Override
-    public Page<ContractIndex> simpleSearch(List<String> keywords, Pageable pageable) {
+    public SearchResult simpleSearch(List<String> keywords, Pageable pageable) {
         List<HighlightField> fields = new ArrayList<>();
         fields.add(new HighlightField("content_sr"));
         fields.add(new HighlightField("content_en"));
@@ -46,11 +53,12 @@ public class SearchServiceImpl implements SearchService {
                     .withHighlightQuery(query)
                     .withPageable(pageable);
 
-        return runQuery(searchQueryBuilder.build());
+        var result = runQuery(searchQueryBuilder.build());
+        return result;
     }
 
     @Override
-    public Page<ContractIndex> advancedSearch(List<String> expression, Pageable pageable) {
+    public SearchResult advancedSearch(List<String> expression, Pageable pageable) {
         if (expression.size() != 3) {
             throw new MalformedQueryException("Search query malformed.");
         }
@@ -61,7 +69,8 @@ public class SearchServiceImpl implements SearchService {
             new NativeQueryBuilder().withQuery(buildAdvancedSearchQuery(expression, operation))
                 .withPageable(pageable);
 
-        return runQuery(searchQueryBuilder.build());
+        var result = runQuery(searchQueryBuilder.build());
+        return result;
     }
 
     private Query buildSimpleSearchQuery(List<String> tokens) {
@@ -138,16 +147,21 @@ public class SearchServiceImpl implements SearchService {
         })))._toQuery();
     }
 
-    private Page<ContractIndex> runQuery(NativeQuery searchQuery) {
+    private SearchResult runQuery(NativeQuery searchQuery) {
 
         var searchHits = elasticsearchTemplate.search(searchQuery, ContractIndex.class,
             IndexCoordinates.of("document_index"));
 
-        var fields = searchHits.getSearchHit(0).getHighlightFields();
-        System.out.println(fields);
-      //  System.out.println(fields.values());
         var searchHitsPaged = SearchHitSupport.searchPageFor(searchHits, searchQuery.getPageable());
 
-        return (Page<ContractIndex>) SearchHitSupport.unwrapSearchHits(searchHitsPaged);
+        var pagination = (Page<ContractIndex>) SearchHitSupport.unwrapSearchHits(searchHitsPaged);
+        var highlightResults = new ArrayList<SearchResultContent>();
+        for (SearchHit<ContractIndex> hit : searchHitsPaged.getSearchHits()) {
+            Map<String, String> highlight = hit.getHighlightFields().keySet().stream()
+                .collect(Collectors.toMap(k -> k, k -> hit.getHighlightFields().get(k).get(0)));
+            var result = contractMapper.mapSearchResult(hit.getContent(), highlight);
+            highlightResults.add(result);
+        }
+        return new SearchResult(highlightResults, pagination.getTotalPages(), pagination.getNumber(), pagination.getSize());
     }
 }

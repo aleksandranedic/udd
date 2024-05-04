@@ -25,7 +25,7 @@ code {
 }
 
 .secondary-button {
-  @apply rounded-lg bg-secondary shadow-2xl p-2 px-5 text-off-white
+  @apply rounded-lg bg-secondary shadow-2xl p-2 px-5 text-off-white flex gap-2
 }
 
 .secondary-round-button {

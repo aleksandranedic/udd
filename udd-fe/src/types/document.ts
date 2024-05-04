@@ -15,6 +15,8 @@ export interface Contract {
     agencySignatoryName?: string;
     agencySignatorySurname?: string;
     lawContent?: string;
+    highlights?: Record<keyof Contract, string>;
+    serverFilename?: string;
 }
 
 export const ContractName = Object.freeze({
@@ -38,4 +40,11 @@ export const ContractName = Object.freeze({
 export enum DocumentType {
     Contract,
     Law,
+}
+
+export interface SearchResults {
+    content: Contract[];
+    total: number;
+    page: number;
+    size: number;
 }

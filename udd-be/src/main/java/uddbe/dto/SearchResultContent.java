@@ -1,0 +1,14 @@
+package uddbe.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.Map;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class SearchResultContent extends ContractDTO{
+    private Map <String, String> highlights;
+}

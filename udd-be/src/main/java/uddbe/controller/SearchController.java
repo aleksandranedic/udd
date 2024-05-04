@@ -1,6 +1,7 @@
 package uddbe.controller;
 
 import uddbe.dto.SearchQueryDTO;
+import uddbe.dto.SearchResult;
 import uddbe.indexmodel.ContractIndex;
 import uddbe.service.interfaces.SearchService;
 import lombok.RequiredArgsConstructor;
@@ -19,13 +20,13 @@ public class SearchController {
     private final SearchService searchService;
 
     @PostMapping("/simple")
-    public Page<ContractIndex> simpleSearch(@RequestBody SearchQueryDTO simpleSearchQuery,
-                                            Pageable pageable) {
+    public SearchResult simpleSearch(@RequestBody SearchQueryDTO simpleSearchQuery,
+                                     Pageable pageable) {
         return searchService.simpleSearch(simpleSearchQuery.keywords(), pageable);
     }
 
     @PostMapping("/advanced")
-    public Page<ContractIndex> advancedSearch(@RequestBody SearchQueryDTO advancedSearchQuery,
+    public SearchResult advancedSearch(@RequestBody SearchQueryDTO advancedSearchQuery,
                                               Pageable pageable) {
         return searchService.advancedSearch(advancedSearchQuery.keywords(), pageable);
     }

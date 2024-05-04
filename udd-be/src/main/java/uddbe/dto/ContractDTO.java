@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ContractDTO {
-    private Integer id;
+    private String id;
     private String content;
     private String agencyAddress;
     private String agencyEmail;
@@ -24,4 +24,5 @@ public class ContractDTO {
     private String agencySignatoryName;
     private String agencySignatorySurname;
     private String lawContent;
+    private String serverFilename;
 }

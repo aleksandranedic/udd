@@ -2,8 +2,11 @@ package uddbe.service.mapper;
 
 import org.springframework.stereotype.Service;
 import uddbe.dto.ContractDTO;
+import uddbe.dto.SearchResultContent;
 import uddbe.indexmodel.ContractIndex;
 import uddbe.model.ContractTable;
+
+import java.util.Map;
 
 @Service
 public class ContractMapper {
@@ -44,5 +47,28 @@ public class ContractMapper {
         newIndex.setAgencySignatoryName(contractTable.getAgencySignatoryName());
         newIndex.setAgencySignatorySurname(contractTable.getAgencySignatorySurname());
         return newIndex;
+    }
+
+    public SearchResultContent mapSearchResult(ContractIndex contractIndex, Map<String, String> highlights) {
+        SearchResultContent searchResult = new SearchResultContent();
+        searchResult.setServerFilename(contractIndex.getServerFilename());
+        searchResult.setAgencyAddress(contractIndex.getAgencyAddress());
+        searchResult.setAgencyEmail(contractIndex.getAgencyEmail());
+        searchResult.setAgencyPhone(contractIndex.getAgencyPhone());
+        searchResult.setGovernmentName(contractIndex.getGovernmentName());
+        searchResult.setGovernmentLevel(contractIndex.getGovernmentLevel());
+        searchResult.setGovernmentAddress(contractIndex.getGovernmentAddress());
+        searchResult.setGovernmentEmail(contractIndex.getGovernmentEmail());
+        searchResult.setGovernmentPhone(contractIndex.getGovernmentPhone());
+        searchResult.setContractTitle(contractIndex.getContractTitle());
+        searchResult.setClientSignatoryName(contractIndex.getClientSignatoryName());
+        searchResult.setClientSignatorySurname(contractIndex.getClientSignatorySurname());
+        searchResult.setAgencySignatoryName(contractIndex.getAgencySignatoryName());
+        searchResult.setAgencySignatorySurname(contractIndex.getAgencySignatorySurname());
+        searchResult.setContent(contractIndex.getContentSr());
+        searchResult.setLawContent(contractIndex.getLawContentSr());
+        searchResult.setHighlights(highlights);
+        searchResult.setId(contractIndex.getId());
+        return searchResult;
     }
 }

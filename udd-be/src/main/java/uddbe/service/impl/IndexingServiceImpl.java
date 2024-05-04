@@ -57,7 +57,7 @@ public class IndexingServiceImpl implements IndexingService {
         var serverFilename = fileService.store(documentFile, UUID.randomUUID().toString());
         newEntity.setServerFilename(serverFilename);
         var savedContract = contractRepository.save(newEntity);
-        contractDTO.setId(savedContract.getId());
+        contractDTO.setId(String.valueOf(savedContract.getId()));
         return contractDTO;
     }
 
@@ -66,7 +66,7 @@ public class IndexingServiceImpl implements IndexingService {
     public String indexDocument(ContractDTO contractDTO) {
         try {
             ContractIndex newIndex = new ContractIndex();
-            Optional<ContractTable> contractTableOpt = contractRepository.findById(contractDTO.getId());
+            Optional<ContractTable> contractTableOpt = contractRepository.findById(Integer.valueOf(contractDTO.getId()));
             if(contractTableOpt.isEmpty()){
                 throw new RuntimeException("Contract with id " + contractDTO.getId() + " not found");
             }
@@ -105,7 +105,7 @@ public class IndexingServiceImpl implements IndexingService {
         var serverFilename = fileService.store(documentFile, UUID.randomUUID().toString());
         newEntity.setServerFilename(serverFilename);
         var savedContract = contractRepository.save(newEntity);
-        contractDTO.setId(savedContract.getId());
+        contractDTO.setId(String.valueOf(savedContract.getId()));
         contractDTO.setLawContent(savedContract.getLawContent());
         return contractDTO;
     }
@@ -115,7 +115,7 @@ public class IndexingServiceImpl implements IndexingService {
     public String indexLaw(ContractDTO contractDTO) {
         try {
             ContractIndex newIndex = new ContractIndex();
-            Optional<ContractTable> contractTableOpt = contractRepository.findById(contractDTO.getId());
+            Optional<ContractTable> contractTableOpt = contractRepository.findById(Integer.valueOf(contractDTO.getId()));
             if(contractTableOpt.isEmpty()){
                 throw new RuntimeException("Contract with id " + contractDTO.getId() + " not found");
             }

@@ -26,12 +26,12 @@ const DocumentDisplay: React.FunctionComponent<DocumentDisplayProps> = ({editabl
             <>
             {
                 Object.keys(contract).map((key, index) => {
-                    if (key === 'id' || key === 'lawContent') return <></>;
+                    if (key === 'id' || key === 'lawContent' || key === 'highlights' || key === 'serverFilename') return <></>;
                     return (
                         <span className="flex items-end gap-10" key={index}>
                         <label className="whitespace-nowrap w-1/4">{ContractName[key as keyof typeof ContractName]}</label>
-                        {key !== 'content' && <input className="w-3/4" type="text" value={contract[key as keyof Contract]} disabled={!editable} onChange={e => changeValue(e, key)}/>}
-                        {key === 'content'  && <textarea className="w-3/4" value={contract[key as keyof Contract]} disabled={!editable} onChange={e => changeValue(e, key)} />}
+                        {key !== 'content' && <input className="w-3/4" type="text" value={contract[key as keyof Contract] as string} disabled={!editable} onChange={e => changeValue(e, key)}/>}
+                        {key === 'content'  && <textarea className="w-3/4" value={contract[key as keyof Contract] as string} disabled={!editable} onChange={e => changeValue(e, key)} />}
                     </span>
                 );
             })      
@@ -75,7 +75,7 @@ export const ContractComp: React.FunctionComponent<ContractCompProps> = ({editab
     return (
         <div className="flex flex-col gap-10 mt-20 overflow-auto">
             <div className="flex flex-col gap-8 m-10">
-            <DocumentDisplay editable type={type} contract={changedContract} setChangedContract={setChangedContract}/>
+            <DocumentDisplay editable={editable} type={type} contract={changedContract} setChangedContract={setChangedContract}/>
             </div>
             <div className="me-10 flex justify-end gap-10">
             <button className="secondary-button" onClick={e => discard()}>Discard changes</button>

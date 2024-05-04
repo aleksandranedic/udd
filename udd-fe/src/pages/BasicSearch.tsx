@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { useAppDispatch } from "../store/types";
 import { basicSearch } from "../store/actions/contract-actions";
+import { SearchResults } from "../components/SearchResults";
 
 export const BasicSearch: React.FunctionComponent = () => {
     const [query, setQuery] = useState<string>('');
     const dispatch = useAppDispatch();
     const search = async () => {
-        console.log('Searching for ' + query);
         await dispatch(basicSearch(query));
     };
     return (
@@ -32,7 +32,7 @@ export const BasicSearch: React.FunctionComponent = () => {
                 </div>
             </div>
             <div className="w-[60%] px-5">
-
+                <SearchResults/>
             </div>
         </div>
     )

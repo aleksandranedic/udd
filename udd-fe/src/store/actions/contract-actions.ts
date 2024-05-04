@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { Contract } from "../../types/document";
+import { Contract, SearchResults } from "../../types/document";
 
 export const submitContract = createAsyncThunk<Contract, File>(
   "contarct/submitContract",
@@ -79,7 +79,7 @@ export const indexLaw = createAsyncThunk<string, Contract>(
   }
 );
 
-export const basicSearch = createAsyncThunk<string, string>(
+export const basicSearch = createAsyncThunk<SearchResults, string>(
   "contract/basicSearch",
   async (query: string, { rejectWithValue }) => {
     try {
@@ -90,7 +90,6 @@ export const basicSearch = createAsyncThunk<string, string>(
         },
         body: JSON.stringify({ keywords: query.split(' ') }),
       });
-      console.log(response);
       const result = await response.json();
       console.log(result);
       if (!response.ok) return rejectWithValue("Failed to search");
