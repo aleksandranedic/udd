@@ -128,3 +128,23 @@ export const advancedSearch = createAsyncThunk<SearchResults, ParameterObject[]>
     }
   }
 );
+
+export const geoSearch = createAsyncThunk<SearchResults, {city: string, radius: number}>(
+  "contract/geoSearch",
+  async (parameters: {city: string, radius: number}, { rejectWithValue }) => {
+    try {
+      const response = await fetch(`http://localhost:8080/api/search/geolocation`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ ...parameters }),
+      });
+      const result = await response.json();
+      if (!response.ok) return rejectWithValue("Failed to search");
+      return result;
+    } catch (error) {
+      return rejectWithValue("Failed to search");
+    }
+  }
+);

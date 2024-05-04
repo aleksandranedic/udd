@@ -1,5 +1,6 @@
 package uddbe.controller;
 
+import uddbe.dto.GeoLocationQueryDTO;
 import uddbe.dto.SearchQueryDTO;
 import uddbe.dto.SearchResult;
 import uddbe.dto.SimpleSearchQueryDTO;
@@ -30,5 +31,11 @@ public class SearchController {
     public SearchResult advancedSearch(@RequestBody SearchQueryDTO advancedSearchQuery,
                                               Pageable pageable) {
         return searchService.advancedSearch(advancedSearchQuery.parameters(), pageable);
+    }
+
+    @PostMapping("/geolocation")
+    public SearchResult geoLocationSearch(@RequestBody GeoLocationQueryDTO geoLocationSearchQuery,
+                                       Pageable pageable) {
+        return searchService.geolocationSearch(geoLocationSearchQuery, pageable);
     }
 }

@@ -8,6 +8,7 @@ export enum Page {
 
 export enum ParameterField {
     EMPLOYEE_NAME = "Employee name",
+    EMPLOYEE_SURNAME = "Employee surname",
     GOVERMENT = "Government name",
     ADMINISTRATIVE_LEVEL = "Administrative level",
     CONTRACT = "Contract content",

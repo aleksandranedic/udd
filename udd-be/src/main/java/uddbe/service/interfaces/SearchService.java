@@ -1,6 +1,7 @@
 package uddbe.service.interfaces;
 
 import uddbe.dto.AdvancedSearchParameter;
+import uddbe.dto.GeoLocationQueryDTO;
 import uddbe.dto.SearchResult;
 import uddbe.indexmodel.ContractIndex;
 import java.util.List;
@@ -14,4 +15,5 @@ public interface SearchService {
     SearchResult simpleSearch(List<String> keywords, Pageable pageable);
 
     SearchResult advancedSearch(List<AdvancedSearchParameter> expression, Pageable pageable);
+    SearchResult geolocationSearch(GeoLocationQueryDTO geoLocationQueryDTO, Pageable pageable);
 }

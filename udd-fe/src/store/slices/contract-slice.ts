@@ -1,7 +1,7 @@
 // counterSlice.ts
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Contract } from "../../types/document";
-import { advancedSearch, basicSearch, indexContract, indexLaw, submitContract, submitLaw } from "../actions/contract-actions";
+import { advancedSearch, basicSearch, geoSearch, indexContract, indexLaw, submitContract, submitLaw } from "../actions/contract-actions";
 
 interface ContractState {
   contract: Contract | null;
@@ -119,7 +119,6 @@ export const contractSlice = createSlice({
       return state;
     });
     builder.addCase(advancedSearch.fulfilled, (state: ContractState, action) => { 
-      console.log(action.payload)
       state.searchResults = action.payload.content;
       state.page = action.payload.page;
       state.size = action.payload.size;
@@ -128,6 +127,22 @@ export const contractSlice = createSlice({
       }
     );
     builder.addCase(advancedSearch.rejected, (state: ContractState) => {
+      state = {...state, loading: false};
+      return state;
+    });
+    builder.addCase(geoSearch.pending, (state: ContractState) => {
+      state = { ...state, loading: true };
+      return state;
+    });
+    builder.addCase(geoSearch.fulfilled, (state: ContractState, action) => { 
+      state.searchResults = action.payload.content;
+      state.page = action.payload.page;
+      state.size = action.payload.size;
+      state.total = action.payload.total;
+      return state;
+      }
+    );
+    builder.addCase(geoSearch.rejected, (state: ContractState) => {
       state = {...state, loading: false};
       return state;
     });

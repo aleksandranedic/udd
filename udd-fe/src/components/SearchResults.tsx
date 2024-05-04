@@ -13,8 +13,9 @@ interface HighlightProps {
 
 const Highlights: React.FunctionComponent<HighlightProps> = ({highlights}) => {
 
-    const displayHighlight = (highlight: string) => {
-        return `...${highlight.replaceAll('em>', 'b>')}...`
+    const displayHighlight = (highlight: string, key: string) => {
+        if (key.toLowerCase().includes('content')) return `...${highlight.replaceAll('em>', 'b>')}...`;
+        return `${highlight.replaceAll('em>', 'b>')}`
     }
 
     return (
@@ -24,7 +25,7 @@ const Highlights: React.FunctionComponent<HighlightProps> = ({highlights}) => {
                 Object.keys(highlights).map((key, ind) => (
                     <span key={ind} className="flex items-center gap-5">
                         <span className="font-light">{ContractName[key as keyof typeof ContractName] ?? 'Contract content:'}</span>
-                        <div className="font-light" dangerouslySetInnerHTML={{ __html: displayHighlight(highlights[key as keyof Contract]) }} />
+                        <div className="font-light" dangerouslySetInnerHTML={{ __html: displayHighlight(highlights[key as keyof Contract], key) }} />
                     </span>
                 ))
             }

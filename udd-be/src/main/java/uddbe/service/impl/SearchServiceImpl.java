@@ -4,8 +4,13 @@ import co.elastic.clients.elasticsearch._types.FieldValue;
 import co.elastic.clients.elasticsearch._types.query_dsl.BoolQuery;
 import co.elastic.clients.elasticsearch._types.query_dsl.Query;
 import co.elastic.clients.elasticsearch._types.query_dsl.TermsQueryField;
+import org.elasticsearch.common.geo.GeoPoint;
+import org.elasticsearch.common.unit.DistanceUnit;
+import org.elasticsearch.index.query.GeoDistanceQueryBuilder;
 import org.springframework.data.elasticsearch.core.SearchHit;
+import org.springframework.data.elasticsearch.core.query.StringQuery;
 import uddbe.dto.AdvancedSearchParameter;
+import uddbe.dto.GeoLocationQueryDTO;
 import uddbe.dto.SearchResult;
 import uddbe.dto.SearchResultContent;
 import uddbe.exceptionhandling.exception.MalformedQueryException;
@@ -20,6 +25,7 @@ import org.springframework.data.elasticsearch.core.query.HighlightQuery;
 import org.springframework.data.elasticsearch.core.query.highlight.Highlight;
 import org.springframework.data.elasticsearch.core.query.highlight.HighlightField;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -39,20 +45,13 @@ public class SearchServiceImpl implements SearchService {
 
     private final ElasticsearchOperations elasticsearchTemplate;
     private final ContractMapper contractMapper;
+    private final GeoLocationService geolocationService;
 
     @Override
     public SearchResult simpleSearch(List<String> keywords, Pageable pageable) {
-        List<HighlightField> fields = new ArrayList<>();
-        fields.add(new HighlightField("content_sr"));
-        fields.add(new HighlightField("content_en"));
-        fields.add(new HighlightField("law_content_sr"));
-        fields.add(new HighlightField("law_content_sr"));
-        Highlight highlight1 = new Highlight(fields);
-        HighlightQuery query = new HighlightQuery(highlight1, ContractIndex.class);
-
         var searchQueryBuilder =
             new NativeQueryBuilder().withQuery(buildSimpleSearchQuery(keywords))
-                    .withHighlightQuery(query)
+                    .withHighlightQuery(buildHighlightQuery())
                     .withPageable(pageable);
 
         var result = runQuery(searchQueryBuilder.build());
@@ -67,10 +66,45 @@ public class SearchServiceImpl implements SearchService {
 
         var searchQueryBuilder =
             new NativeQueryBuilder().withQuery(buildAdvancedSearchQuery(expressions))
-                .withPageable(pageable);
+                    .withHighlightQuery(buildHighlightQuery())
+                    .withPageable(pageable);
 
         var result = runQuery(searchQueryBuilder.build());
         return result;
+    }
+
+    public SearchResult geolocationSearch(GeoLocationQueryDTO geoLocationQueryDTO, Pageable pageable) {
+        GeoPoint geoPoint = null;
+        try {
+            geoPoint = geolocationService.getCoordinatesBasedOnAddress(geoLocationQueryDTO.getCity());
+            GeoDistanceQueryBuilder geoDistanceQueryBuilder = new GeoDistanceQueryBuilder("location")
+                    .point(geoPoint.getLat(),geoPoint.getLon())
+                    .distance(geoLocationQueryDTO.getRadius(), DistanceUnit.KILOMETERS);
+
+            var searchQuery = new NativeQueryBuilder().withQuery(new StringQuery(geoDistanceQueryBuilder.toString()))
+                    .withHighlightQuery(buildHighlightQuery())
+                    .withPageable(pageable);
+
+            return runQuery(searchQuery.build());
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    private HighlightQuery buildHighlightQuery() {
+        List<HighlightField> fields = new ArrayList<>();
+        fields.add(new HighlightField("content_sr"));
+        fields.add(new HighlightField("content_en"));
+        fields.add(new HighlightField("law_content_sr"));
+        fields.add(new HighlightField("law_content_sr"));
+        fields.add(new HighlightField("agency_signatory_name"));
+        fields.add(new HighlightField("agency_signatory_surname"));
+        fields.add(new HighlightField("government_name"));
+        fields.add(new HighlightField("government_level"));
+        Highlight highlight1 = new Highlight(fields);
+        HighlightQuery query = new HighlightQuery(highlight1, ContractIndex.class);
+        return query;
     }
 
     private Query buildSimpleSearchQuery(List<String> tokens) {
@@ -128,6 +162,8 @@ public class SearchServiceImpl implements SearchService {
                 return "government_level";
             case "Government name":
                 return "government_name";
+            case "Employee surname":
+                return "agency_signatory_surname";
             default:
                 return "agency_signatory_name";
         }
