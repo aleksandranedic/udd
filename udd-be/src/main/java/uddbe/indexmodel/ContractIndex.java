@@ -13,7 +13,7 @@ import org.springframework.data.elasticsearch.annotations.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Document(indexName = "document_index")
+@Document(indexName = "docs_index")
 @Setting(settingPath = "/configuration/serbian-analyzer-config.json")
 public class ContractIndex {
 
@@ -44,13 +44,13 @@ public class ContractIndex {
     @Field(type = FieldType.Text, store = true, name = "agency_phone", analyzer = "serbian_simple", searchAnalyzer = "serbian_simple")
     private String agencyPhone;
 
-    @Field(type = FieldType.Text, store = true, name = "government_name", analyzer = "serbian_simple", searchAnalyzer = "serbian_simple")
+    @Field(type = FieldType.Keyword, store = true, name = "government_name")
     private String governmentName;
 
     @Field(type = FieldType.Text, store = true, name = "government_level", analyzer = "serbian_simple", searchAnalyzer = "serbian_simple")
     private String governmentLevel;
 
-    @Field(type = FieldType.Text, store = true, name = "government_address", analyzer = "serbian_simple", searchAnalyzer = "serbian_simple")
+    @Field(type = FieldType.Keyword, store = true, name = "government_address")
     private String governmentAddress;
 
     @Field(type = FieldType.Text, store = true, name = "government_email", analyzer = "serbian_simple", searchAnalyzer = "serbian_simple")
@@ -71,7 +71,7 @@ public class ContractIndex {
     @Field(type = FieldType.Text, store = true, name = "agency_signatory_name", analyzer = "serbian_simple", searchAnalyzer = "serbian_simple")
     private String agencySignatoryName;
 
-    @Field(type = FieldType.Text, store = true, name = "agency_signatory_surname", analyzer = "serbian_simple", searchAnalyzer = "serbian_simple")
+    @Field(type = FieldType.Keyword, store = true, name = "agency_signatory_surname")
     private String agencySignatorySurname;
 
     @Field(type = FieldType.Text, store = true, name = "law_content_sr", analyzer = "serbian_simple", searchAnalyzer = "serbian_simple")

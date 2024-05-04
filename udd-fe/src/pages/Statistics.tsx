@@ -1,7 +1,5 @@
 export const Staticstics: React.FunctionComponent = () => {
     return (
-        <div>
-            statistics
-        </div>
+        <iframe src="http://localhost:5601/app/dashboards#/view/eca8b690-0a3c-11ef-860e-1525f9220215?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now-15m,to:now))&_a=(description:'',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,syncColors:!f,syncTooltips:!f,useMargins:!t),panels:!((embeddableConfig:(enhancements:()),gridData:(h:15,i:deb45372-c2af-4488-8d95-30d909202723,w:24,x:0,y:0),id:'897996d0-0a3b-11ef-860e-1525f9220215',panelIndex:deb45372-c2af-4488-8d95-30d909202723,type:visualization,version:'8.4.3'),(embeddableConfig:(enhancements:()),gridData:(h:15,i:'17dff6e0-ab21-418d-a648-59391c770640',w:24,x:24,y:0),id:'7ff876c0-0a3c-11ef-860e-1525f9220215',panelIndex:'17dff6e0-ab21-418d-a648-59391c770640',type:visualization,version:'8.4.3'),(embeddableConfig:(enhancements:()),gridData:(h:15,i:'8bc61578-fde1-4e86-82e9-b0720c92745e',w:24,x:0,y:15),id:e150d020-0a3c-11ef-860e-1525f9220215,panelIndex:'8bc61578-fde1-4e86-82e9-b0720c92745e',type:visualization,version:'8.4.3')),query:(language:kuery,query:''),tags:!(),timeRestore:!f,title:Main,viewMode:view)" height="900" width="1600"></iframe>
     )
 };
