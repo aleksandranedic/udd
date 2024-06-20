@@ -52,6 +52,7 @@ export const contractSlice = createSlice({
       }
     );
     builder.addCase(submitContract.rejected, (state: ContractState) => {
+      alert("Failed to submit contract");
       state = {...state, loading: false};
       return state;
     });
@@ -60,12 +61,14 @@ export const contractSlice = createSlice({
       return state;
     });
     builder.addCase(indexContract.fulfilled, (state: ContractState, action) => {
-        alert(action.payload);
+        console.log(action.payload);
+        alert("Contract indexed successfully, you can try to search by its content")
         return state;
       }
     );
     builder.addCase(indexContract.rejected, (state: ContractState) => {
       state = {...state, loading: false};
+      alert("Failed to index contract");
       return state;
     });
 
@@ -90,7 +93,8 @@ export const contractSlice = createSlice({
       return state;
     });
     builder.addCase(indexLaw.fulfilled, (state: ContractState, action) => {
-        alert(action.payload);
+        console.log(action.payload);
+        alert("Law indexed successfully, you can try to search by its content")
         return state;
       }
     );

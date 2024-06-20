@@ -88,6 +88,7 @@ public class IndexingServiceImpl implements IndexingService {
             return contractTable.getServerFilename();
 
         } catch (Exception e) {
+            e.printStackTrace();
             throw new RuntimeException("Error while indexing document");
         }
     }

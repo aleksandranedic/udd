@@ -74,8 +74,8 @@ export const SearchResults: React.FunctionComponent = () => {
             </div>
         </div>
         )
-    return <div className="overflow-auto px-5">
-        {searchResults[index].highlights && Object.keys(searchResults[index].highlights!).length > 0 && <Highlights highlights={searchResults[index].highlights!}/> }
+    return <div className="px-5">
+        {searchResults[index]?.highlights && Object.keys(searchResults[index]?.highlights!).length > 0 && <Highlights highlights={searchResults[index]?.highlights!}/> }
         <div className="w-full items-center justify-between flex my-10">
         <span className="font-bold">Whole document:</span>
         <button className="secondary-button" onClick={e => downloadFile(searchResults[index].serverFilename!)}>
@@ -83,17 +83,19 @@ export const SearchResults: React.FunctionComponent = () => {
             Download
         </button>
         </div>
-        {
-            Object.keys(searchResults[index]).map((key, ind) => {
-                if (key === 'id' || key === 'serverFilename' || key === 'highlights' || !searchResults[index][key as keyof typeof ContractName]) return <></>;
-                return (
-                    <span className="flex items-center gap-10 mb-2" key={ind}>
-                        <label className="whitespace-nowrap w-1/4 font-light">{ContractName[key as keyof typeof ContractName]}:</label>
-                        <p className="w-3/4 text-justify font-light"> {searchResults[index][key as keyof typeof ContractName]} </p>
-                    </span>
-                );
-            })
-        }
+        <div className="overflow-auto h-[40em] flex flex-col">
+            {
+                Object.keys(searchResults[index]).map((key, ind) => {
+                    if (key === 'id' || key === 'serverFilename' || key === 'highlights' || !searchResults[index][key as keyof typeof ContractName]) return <></>;
+                    return (
+                        <span className="flex items-center gap-10 mb-2" key={ind}>
+                            <label className="whitespace-nowrap w-1/4 font-light">{ContractName[key as keyof typeof ContractName]}:</label>
+                            <p className="w-3/4 text-justify font-light"> {searchResults[index][key as keyof typeof ContractName]} </p>
+                        </span>
+                    );
+                })
+            }
+        </div>
         <div className="flex w-full justify-end gap-5 items-center">
             <button onClick={() => pageDown()}><IoIosArrowDropleft size={30} color={index === 0 ? "#D3D3D3" : "#d87860"}/></button>
             <p className="font-light">{index +1} of {searchResults.length}</p>

@@ -12,7 +12,6 @@ export const submitContract = createAsyncThunk<Contract, File>(
         method: "POST",
         body: formData,
       });
-
       if (!response.ok) return rejectWithValue("Failed to submit contract");
       return await response.json();
     } catch (error) {
@@ -21,7 +20,7 @@ export const submitContract = createAsyncThunk<Contract, File>(
   }
 );
 
-export const indexContract = createAsyncThunk<string, Contract>(
+export const indexContract = createAsyncThunk<boolean, Contract>(
   "contarct/indexContract",
   async (contract: Contract, { rejectWithValue }) => {
     try {
@@ -34,8 +33,9 @@ export const indexContract = createAsyncThunk<string, Contract>(
       });
 
       if (!response.ok) return rejectWithValue("Failed to submit contract");
-      return await response.json();
+      return true;
     } catch (error) {
+      console.log(error);
       return rejectWithValue("Failed to submit contract");
     }
   }
