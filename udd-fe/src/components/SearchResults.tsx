@@ -24,7 +24,7 @@ const Highlights: React.FunctionComponent<HighlightProps> = ({highlights}) => {
             {
                 Object.keys(highlights).map((key, ind) => (
                     <span key={ind} className="flex items-center gap-5">
-                        <span className="font-light">{ContractName[key as keyof typeof ContractName] ?? 'Contract content:'}</span>
+                        <span className="font-light">{ContractName[key as keyof typeof ContractName] ?? 'Content:'}</span>
                         <div className="font-light" dangerouslySetInnerHTML={{ __html: displayHighlight(highlights[key as keyof Contract], key) }} />
                     </span>
                 ))

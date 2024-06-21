@@ -60,7 +60,7 @@ export const submitLaw = createAsyncThunk<Contract, File>(
   }
 );
 
-export const indexLaw = createAsyncThunk<string, Contract>(
+export const indexLaw = createAsyncThunk<boolean, Contract>(
   "contarct/indexLaw",
   async (contract: Contract, { rejectWithValue }) => {
     try {
@@ -73,7 +73,7 @@ export const indexLaw = createAsyncThunk<string, Contract>(
       });
 
       if (!response.ok) return rejectWithValue("Failed to submit law");
-      return await response.json();
+      return true;
     } catch (error) {
       return rejectWithValue("Failed to submit law");
     }
